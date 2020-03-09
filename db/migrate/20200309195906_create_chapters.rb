@@ -4,6 +4,7 @@ class CreateChapters < ActiveRecord::Migration[6.0]
       t.integer :number
       t.string :title
       t.text :content
+      t.belongs_to :book
     end
   end
 end

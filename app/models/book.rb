@@ -1,7 +1,7 @@
 
 # has many authors
 # has many library_records
-# has many pages
+
 
 
 class Book < ApplicationRecord
