@@ -9,16 +9,25 @@
 # has many friends (users)
 
 
+# friends are users who have been friended by the user; inverse_friends are those who added user
+
+
 class User < ApplicationRecord
    
   # friendship relations  
-  has_many :friendships
-  has_many :friends, :through => :friendships
-  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
-  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+  # has_many :followers, foreign_key: :follower_id , class_name: "Friendship"
+  # has_many :followed, through: :followers
+  # has_many :followed, foreign_key: :followed_id, class_name: "Friendship"
+  # has_many :followers, through: :followed
+
+  has_many :friends, foreign_key: :friend_id , class_name: "Friendship"
+  has_many :inverse_friends, through: :friends
+  has_many :inverse_friends, foreign_key: :inverse_friend_id, class_name: "Friendship"
+  has_many :friends, through: :inverse_friends
   # message relations
-  has_many :senders, foreign_key: :sender_id, class_name: 'Message'
-  has_many :receivers, through: :senders
+  # has_many :messages
+  # has_many :senders, :foreign_key => "sender_id", class_name: 'Message'
+  # has_many :receivers, through: :senders
   # other
   # has_many :library_records, dependent: :destroy 
   # has_many :books, through: :library_records,
