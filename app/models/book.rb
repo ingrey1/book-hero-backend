@@ -5,7 +5,7 @@
 
 
 class Book < ApplicationRecord
-    has_many :authors
-    has_many :library_records
-    has_many :pages, dependent: :destroy
+    # has_many :authors
+    # has_many :library_records
+    # has_many :chapters, dependent: :destroy
 end
