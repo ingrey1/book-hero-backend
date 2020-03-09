@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
-      
-      resources :books # all books
+      get '/books', to: 'books#all_books' # all books
+      get '/auth', to: 'users#auth'
       resources :users do
          get '/api/v1/users/:user_id/profile', to: "accounts#show" # profile info 
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
