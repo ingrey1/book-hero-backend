@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_200420) do
     t.integer "number"
     t.string "title"
     t.text "content"
+    t.bigint "book_id"
+    t.index ["book_id"], name: "index_chapters_on_book_id"
   end
 
   create_table "comments", force: :cascade do |t|
