@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       
       resources :books # all books
-      resources :users do 
+      resources :users do
+         get '/api/v1/users/:user_id/profile', to: "accounts#show" # profile info 
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
            resources :chapters do # user's book's chapters 
              resources :comments # book's chapter's comments 
