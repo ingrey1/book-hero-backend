@@ -1,0 +1,7 @@
+# belongs to user1
+# belongs to user2
+
+class Friend < ApplicationRecord
+    belongs_to :user
+    belongs_to :friend, :class_name => "User"
+end
