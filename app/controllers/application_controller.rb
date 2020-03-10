@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
      def handle_auth
 
         auth = authorized(get_token)
-        if !auth.errors
+        if auth and !auth[:errors]
           # do user stuff
           yield(auth)
 
@@ -23,10 +23,13 @@ class ApplicationController < ActionController::API
           return {errors: [ERROR_MESSAGES[:invalid_token]]}
         end
 
-        email = data[0][:email]
+        email = data[0]["email"]
+         
+
 
         begin # get the user, if it exists
-            user = User.find_by(email: email)
+          
+            user = User.find_by!(email: email)
             return user
         rescue # register new user
             return User.create_and_setup(email)
