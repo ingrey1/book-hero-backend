@@ -16,7 +16,21 @@ class User < ApplicationRecord
   has_many :comments 
   has_one :account, dependent: :destroy
   validates :email, uniqueness: true
-  validates :username, presence: true
+
+  def self.create_and_setup(email)
+     # create the user
+     new_user = self.new(email: email)
+     if !new_user.save # unsuccessful registration
+        return {errors: ["user creation failed"]}
+     end
+
+     new_account = Account.new(user: new_user)
+     if !new_account.save # unsuccessful registration
+       return {errors: ["account creation failed for #{email}"]} 
+     end
+     
+     return new_user
+  end 
   
 
 
