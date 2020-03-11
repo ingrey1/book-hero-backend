@@ -11,6 +11,7 @@ class Api::V1::UsersController < ApplicationController
   def render_user_info(user)
      
      render json: user
+     
   end 
 
 

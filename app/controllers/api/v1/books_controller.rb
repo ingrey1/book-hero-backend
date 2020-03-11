@@ -1,27 +1,35 @@
 class Api::V1::BooksController < ApplicationController
     
-    all_books
+    def all_books
+     
+     handle_auth { render_all_books }
 
     end 
     
-    index
+    def index
 
     end 
 
-    create
+    def create
 
     end
     
-    show 
+   def show 
 
     end
     
-    update
+    def update
 
     end
     
-    delete
+    def delete
     
+    end
+    
+    private
+
+    def render_all_books
+      render json: Book.all
     end 
 
 end
