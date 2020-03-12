@@ -20,12 +20,12 @@ class User < ApplicationRecord
   def self.create_and_setup(email)
      # create the user
      new_user = self.new(email: email)
-     if !new_user.save # unsuccessful registration
+     if !new_user.save # unsuccessful user setup
         return {errors: ["user creation failed"]}
      end
 
      new_account = Account.new(user: new_user)
-     if !new_account.save # unsuccessful registration
+     if !new_account.save # unsuccessful account setup
        return {errors: ["account creation failed for #{email}"]} 
      end
      
