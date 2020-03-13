@@ -21,16 +21,22 @@ user4 = User.create!(first_name: "dave", last_name: "not sure", email: "dave@gma
 
 author1 = Author.create!(name: "Amazing Author Jr")
 
-book1 = Book.create!(title: "book1", description: "the first book", author: author1)
-book2 = Book.create!(title: "book2", description: "the second book", author: author1)
-book3 = Book.create!(title: "book3", description: "the third book", author: author1)
-book4 = Book.create!(title: "book4", description: "the fourth book", author: author1)
-book5 = Book.create!(title: "book5", description: "the fifth book", author: author1)
-book6 = Book.create!(title: "book6", description: "the sixth book", author: author1)
-book7 = Book.create!(title: "book7", description: "the seventh book", author: author1)
-book8 = Book.create!(title: "book8", description: "the eight book", author: author1)
-book9 = Book.create!(title: "book9", description: "the ninth book", author: author1)
-book10 = Book.create!(title: "book10", description: "the tenth book", author: author1)
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dui augue, pretium a gravida eget, volutpat nec metus. Nulla laoreet lectus a neque molestie cursus. Fusce in purus at lorem dapibus dictum. Maecenas egestas purus eget dui fringilla aliquet. Proin ullamcorper bibendum turpis id rutrum. Nunc consequat nisl blandit dolor consequat gravida. Nunc iaculis lorem et enim gravida eleifend commodo magna aliquam. Nam suscipit sapien ut risus porta at porttitor sem eleifend. Ut congue bibendum metus, eu tristique ante vestibulum eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc enim est, accumsan cursus luctus a, scelerisque ut ligula. Morbi dignissim, nibh a eleifend pretium, sapien massa tempus ipsum, et accumsan metus eros vitae mauris.
+Praesent malesuada nunc quis justo consectetur vehicula accumsan ipsum congue. Donec dui risus, sollicitudin non vulputate sed, dapibus sit amet libero. Suspendisse convallis pretium libero ac adipiscing. Praesent molestie, libero ac venenatis porttitor, nulla magna congue massa, at lobortis nunc leo facilisis dui. Integer consequat velit et nibh congue semper porttitor elit mattis. Duis sollicitudin turpis sed felis convallis accumsan. Nam vitae tortor sit amet nulla tempor dapibus. Cras ac velit erat, non euismod risus. Vivamus imperdiet semper auctor. In hac habitasse platea dictumst. Pellentesque semper metus at erat iaculis blandit. Aenean suscipit eleifend sagittis.
+Suspendisse nec neque a sapien tempor mollis non ut enim. Ut in nisi elit. In libero ante, vestibulum ac lacinia et, volutpat nec lectus. Aenean nunc felis, rutrum non pulvinar in, tincidunt a metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi neque odio, auctor sed dictum hendrerit, consequat nec orci. Quisque adipiscing lacus et lectus blandit quis malesuada erat egestas. Phasellus pellentesque dolor sed est porta viverra. Maecenas consequat enim in orci ornare pretium.
+Nulla pharetra eros non felis vehicula egestas hendrerit in orci. Nullam luctus, elit eu porta bibendum, mauris erat sodales ligula, vitae auctor tortor ante cursus diam. Cras pharetra metus et eros suscipit accumsan. Fusce at magna neque. Phasellus tincidunt ultricies nisl et scelerisque. Donec volutpat, est non aliquet faucibus, lorem urna semper ipsum, at accumsan ligula nisi vitae quam. Phasellus iaculis vestibulum felis at fringilla. Nam egestas vulputate malesuada. Donec accumsan, diam at tincidunt elementum, neque orci ultrices massa, quis mattis neque nisi eu massa. Ut libero mi, dapibus eget varius a, porttitor eget dolor.
+Morbi sodales"
+
+book1 = Book.create!(categories: "sci-fi book_hero_original", title: "book1", description: description, author: author1)
+book2 = Book.create!(categories: "sci-fi", title: "book2", description: description, author: author1)
+book3 = Book.create!(categories: "sci-fi", title: "book3", description: description, author: author1)
+book4 = Book.create!(categories: "fantasy book_hero_original",title: "book4", description: description, author: author1)
+book5 = Book.create!(categories: "fantasy", title: "book5", description: description, author: author1)
+book6 = Book.create!(categories: "fantasy", title: "book6", description: description, author: author1)
+book7 = Book.create!(categories: "romance book_hero_original", title: "book7", description: description, author: author1)
+book8 = Book.create!(categories: "romance", title: "book8", description: description, author: author1)
+book9 = Book.create!(categories: "classics fantasy"title: "book9", description: description, author: author1)
+book10 = Book.create!(categories: "classics romance", title: "book10", description: description, author: author1)
 
 library_record1 = LibraryRecord.create!(user: user1, book: book1)
 library_record2 = LibraryRecord.create!(user: user1, book: book2)
@@ -71,61 +77,62 @@ Integer mi augue, tincidunt non porta at, laoreet id ante. Nunc adipiscing bland
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book1)
-    
+    book1.update!(chapter_count: book1.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book2)
-    
+    book2.update!(chapter_count: book2.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book3)
-    
+    book3.update!(chapter_count: book3.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book4)
-    
+    book4.update!(chapter_count: book4.chapter_count + 1)
 end
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book5)
-    
+    book5.update!(chapter_count: book5.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book6)
+    book6.update!(chapter_count: book6.chapter_count + 1)
     
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book7)
-    
+    book7.update!(chapter_count: book7.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book8)
-    
+    book8.update!(chapter_count: book8.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book9)
-    
+    book9.update!(chapter_count: book9.chapter_count + 1)
 end 
 
 50.times do |i| 
 
     chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book10)
-    
+    book10.update!(chapter_count: book10.chapter_count + 1)
 end 
 
 
