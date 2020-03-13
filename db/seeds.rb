@@ -22,6 +22,26 @@ user4 = User.create!(first_name: "dave", last_name: "not sure", email: "dave@gma
 author1 = Author.create!(name: "Amazing Author Jr")
 
 book1 = Book.create!(title: "book1", description: "the first book", author: author1)
+book2 = Book.create!(title: "book2", description: "the second book", author: author1)
+book3 = Book.create!(title: "book3", description: "the third book", author: author1)
+book4 = Book.create!(title: "book4", description: "the fourth book", author: author1)
+book5 = Book.create!(title: "book5", description: "the fifth book", author: author1)
+book6 = Book.create!(title: "book6", description: "the sixth book", author: author1)
+book7 = Book.create!(title: "book7", description: "the seventh book", author: author1)
+book8 = Book.create!(title: "book8", description: "the eight book", author: author1)
+book9 = Book.create!(title: "book9", description: "the ninth book", author: author1)
+book10 = Book.create!(title: "book10", description: "the tenth book", author: author1)
+
+library_record1 = LibraryRecord.create!(user: user1, book: book1)
+library_record2 = LibraryRecord.create!(user: user1, book: book2)
+library_record3 = LibraryRecord.create!(user: user1, book: book3)
+library_record4 = LibraryRecord.create!(user: user1, book: book4)
+library_record5 = LibraryRecord.create!(user: user1, book: book5)
+library_record6 = LibraryRecord.create!(user: user1, book: book6)
+library_record7 = LibraryRecord.create!(user: user1, book: book7)
+library_record8 = LibraryRecord.create!(user: user1, book: book8)
+library_record9 = LibraryRecord.create!(user: user1, book: book9)
+library_record10 = LibraryRecord.create!(user: user1, book: book10)
 
 
 
@@ -46,7 +66,68 @@ Integer mi augue, tincidunt non porta at, laoreet id ante. Nunc adipiscing bland
 " 
 
 
-chapter1 = Chapter.create(number: 1, title: "the first chapter", content: big_text, book: book1)
+ 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book1)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book2)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book3)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book4)
+    
+end
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book5)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book6)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book7)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book8)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book9)
+    
+end 
+
+50.times do |i| 
+
+    chapter = Chapter.create!(number: i, title: "title for chapter #{i}", content: big_text, book: book10)
+    
+end 
+
 
 
 
