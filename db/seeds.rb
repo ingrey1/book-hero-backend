@@ -35,7 +35,7 @@ book5 = Book.create!(categories: "fantasy", title: "book5", description: descrip
 book6 = Book.create!(categories: "fantasy", title: "book6", description: description, author: author1)
 book7 = Book.create!(categories: "romance book_hero_original", title: "book7", description: description, author: author1)
 book8 = Book.create!(categories: "romance", title: "book8", description: description, author: author1)
-book9 = Book.create!(categories: "classics fantasy"title: "book9", description: description, author: author1)
+book9 = Book.create!(categories: "classics fantasy", title: "book9", description: description, author: author1)
 book10 = Book.create!(categories: "classics romance", title: "book10", description: description, author: author1)
 
 library_record1 = LibraryRecord.create!(user: user1, book: book1)
