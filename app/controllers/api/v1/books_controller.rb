@@ -41,12 +41,6 @@ class Api::V1::BooksController < ApplicationController
         render json: user.books, each_serializer: UserBookSerializer, user: user
     end 
 
-    def serialize(collection, serializer, adapter = :json)
-      ActiveModelSerializers::SerializableResource.new(
-        collection,
-        each_serializer: serializer,
-        adapter: adapter
-      ).as_json
-    end
+   
 
 end
