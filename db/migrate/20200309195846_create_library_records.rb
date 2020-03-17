@@ -6,6 +6,7 @@ class CreateLibraryRecords < ActiveRecord::Migration[6.0]
       t.integer :current_chapter, default: 1
       t.integer :current_word, default: 1
       t.string :status
+      t.timestamps
     end
   end
 end

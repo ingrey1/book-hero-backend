@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_200420) do
     t.text "description"
     t.integer "chapter_count", default: 0
     t.string "categories"
+    t.string "image_url"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_books_on_author_id"
   end
@@ -66,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_200420) do
     t.integer "current_chapter", default: 1
     t.integer "current_word", default: 1
     t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_library_records_on_book_id"
     t.index ["user_id"], name: "index_library_records_on_user_id"
   end
