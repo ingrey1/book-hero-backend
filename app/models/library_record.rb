@@ -5,5 +5,5 @@
 class LibraryRecord < ApplicationRecord
     belongs_to :user
     belongs_to :book
-    validates :book, uniquness: {scope: :book }
+    validates :book, uniqueness: {scope: :user }
 end
