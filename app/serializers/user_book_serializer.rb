@@ -6,7 +6,7 @@ class UserBookSerializer < ActiveModel::Serializer
 
   def current_reading_location
     library_record = LibraryRecord.find_by(user: instance_options[:user], book: object)
-    reading_progress = {created_at: library_record.created_at, updated_at: library_record.updated_at, tcurrent_word: library_record.current_word, current_chapter: library_record.current_chapter} 
+    reading_progress = {created_at: library_record.created_at, updated_at: library_record.updated_at, current_word: library_record.current_word, current_chapter: library_record.current_chapter} 
   end   
 
 end

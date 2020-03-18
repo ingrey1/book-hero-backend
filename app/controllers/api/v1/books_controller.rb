@@ -10,8 +10,6 @@ class Api::V1::BooksController < ApplicationController
 
       handle_auth { render_my_books }
 
-
-
     end 
 
     def create
