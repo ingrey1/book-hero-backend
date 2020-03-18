@@ -5,11 +5,11 @@ Rails.application.routes.draw do
       get '/books', to: 'books#all_books' # all books
       post '/auth', to: 'users#auth'
       resources :users do
-         get '/api/v1/users/:user_id/profile', to: "accounts#show" # profile info 
+         get '/:user_id/profile', to: "accounts#show" # profile info 
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
-            
+          get '/chapters/next_chapter', to: 'chapters#next_chapter'
+          get '/chapters/current_chapter', to: 'chapters#current_chapter'  
           resources :chapters do # user's book's chapters
-             post '/next_chapter', to: 'chapters#next_chapter' 
              resources :comments # book's chapter's comments 
            end 
          end 
