@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :users do
          get '/api/v1/users/:user_id/profile', to: "accounts#show" # profile info 
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
-           resources :chapters do # user's book's chapters 
+            
+          resources :chapters do # user's book's chapters
+             post '/next_chapter', to: 'chapters#next_chapter' 
              resources :comments # book's chapter's comments 
            end 
          end 

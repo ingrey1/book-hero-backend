@@ -1,4 +1,5 @@
 class Api::V1::ChaptersController < ApplicationController
+  
   def index
 
   end
@@ -23,7 +24,7 @@ class Api::V1::ChaptersController < ApplicationController
 
   def render_next_chapter
     current_chapter_num = get_current_chapter().current_chapter
-    next_chapter = Chapter.find_by(book: book, number: number + 1)
+    next_chapter = Chapter.find_by(book: book, number: current_chapter_num + 1)
     if next_chapter
       render json: next_chapter
     else 
