@@ -22,6 +22,8 @@ class Api::V1::ChaptersController < ApplicationController
 
   def update_reading_status
 
+      handle_auth { render_update_reading_status }
+
   end 
 
   private
@@ -57,6 +59,25 @@ class Api::V1::ChaptersController < ApplicationController
     else 
       render json: {errors: ['chapter not found']}
     end 
+
+  end 
+
+  def render_update_reading_status
+
+    book = Book.find(params[:book_id])
+    user = User.find(params[:user_id])
+    library_record = LibraryRecord.find_by(book: book, user: user)
+    
+    new_current_chapter = params[:current_chapter].to_i
+    new_current_word = params[:current_word].to_i
+    #byebug
+    if library_record.update(current_chapter: new_current_chapter, current_word: new_current_word)
+       render json: {success: 'reading location saved'}
+    else
+       render json: {errors: ['unable to save reading location']} 
+    end 
+    
+
 
   end 
 
