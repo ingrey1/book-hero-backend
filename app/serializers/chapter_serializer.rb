@@ -1,5 +1,5 @@
 class ChapterSerializer < ActiveModel::Serializer
-  attributes :id, :title, :content, :number, :chapter_comments, :current_word
+  attributes :id, :title, :content, :number, :chapter_comments, :current_word, :book_id
 
   def chapter_comments
      object.comments
