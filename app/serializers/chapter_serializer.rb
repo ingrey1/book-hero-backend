@@ -7,7 +7,14 @@ class ChapterSerializer < ActiveModel::Serializer
 
   def current_word
 
-    library_record = LibraryRecord.find_by(book: object.book, user: instance_options[:user] ).current_word
+    record = LibraryRecord.find_by(book: object.book, user: instance_options[:user] )
+    current_word = record.current_word
+    if object.number != record.current_chapter # if its not the current chapter, it starts on the first word
+       current_word = 1
+    end 
+    
+    current_word
+
   end 
 
 end
