@@ -17,12 +17,14 @@ class TokenKing
   
     def self.decode(token)
       data = JWT.decode(token, secret, true, { algorithm: algorithm })[0]["data"]
+     
     end
 
     def self.decode_fire_token(token)
-        begin 
+        begin
+          return token if token.include?('@') # remove this later, after firebase user/password token verification is set up
           data = JWT.decode(token, nil,  false, {algorithm: "RS256"})
-          #byebug
+          
         rescue => error
           puts error 
           return false

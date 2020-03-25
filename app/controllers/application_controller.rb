@@ -19,14 +19,13 @@ class ApplicationController < ActionController::API
     def authorized(token)
         # if the token is valid, retrieve email from token
         data = TokenKing.decode_fire_token(token)
+        
         if !data
           return {errors: [ERROR_MESSAGES[:invalid_token]]}
         end
 
-        email = data[0]["email"]
-         
-
-
+        email = data.class == String ? data : data[0]["email"] # ADJUST LATER AFTER EMAIL/PASSWORD AUTH SETUP
+        
         begin # get the user, if it exists
           
             user = User.find_by!(email: email)
