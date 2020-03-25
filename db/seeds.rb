@@ -117,7 +117,7 @@ author1 = Author.create!(name: "Amazing Author Jr")
 david_hume = Author.create!(name: "David Hume")
 # create book
 inquiry_description = "An Enquiry Concerning Human Understanding is a book by the Scottish empiricist philosopher David Hume, published in English in 1748. It was a revision of an earlier effort, Hume's A Treatise of Human Nature, published anonymously in London in 1739–40. Hume was disappointed with the reception of the Treatise, which 'fell dead-born from the press,' as he put it, and so tried again to disseminate his more developed ideas to the public by writing a shorter and more polemical work.The end product of his labours was the Enquiry. The Enquiry dispensed with much of the material from the Treatise, in favor of clarifying and emphasizing its most important aspects. For example, Hume's views on personal identity do not appear. However, more vital propositions, such as Hume's argument for the role of habit in a theory of knowledge, are retained.This book has proven highly influential, both in the years that would immediately follow and today. Immanuel Kant points to it as the book which woke him from his self-described 'dogmatic slumber.' The Enquiry is widely regarded as a classic in modern philosophical literature."
-inquiry_categories = "philosophy"
+inquiry_categories = "philosophy; empiricism; metaphysics; epistemology; philosophy of mind"
 inquiry_title = "An Enquiry Concerning Human Understanding"
 inquiry_image_url = "https://images-na.ssl-images-amazon.com/images/I/41AnVNgxdiL._SX331_BO1,204,203,200_.jpg"
 inquiry_book = Book.create!(description: inquiry_description, author: david_hume, title: inquiry_title, categories: inquiry_categories, image_url: inquiry_image_url)
@@ -741,7 +741,7 @@ inquiry_book.chapters << inquiry_chapter3
 # dialogues concerning natural religion
 # create book
 religion_description = "Published after his death to avoid persecution, Hume's biting criticism of religion and non-empirical methods of pursuing knowledge have resonated over the centuries, manifesting even to this day in the 'New Atheist' movement. Many of the arguments that surface today in disputes between 'science' and 'religion' or about religious claims in general were made several centuries ago by the Scottish philosopher, David Hume. While many find Hume's arguments compelling, that they can still be heard today suggests that others remain unconvinced. In this reprint of a 1779 version (second edition), readers can hear the arguments for themselves, and make their own determinations."
-religion_categories = "philosophy"
+religion_categories = "philosophy; philosophy of religion; metaphysics; epistemology"
 religion_title = "Dialogues Concerning Natural Religion"
 religion_image_url = "https://images-na.ssl-images-amazon.com/images/I/41tejhEC5jL._SX302_BO1,204,203,200_.jpg"
 religion_book = Book.create!(description: religion_description, author: david_hume, title: religion_title, categories: religion_categories, image_url: religion_image_url)
@@ -879,3 +879,1261 @@ religion_chapter3_title = "PART 2"
 religion_chapter3_number = 3
 religion_chapter3 = Chapter.create!(book: religion_book, content: religion_chapter3_content, title: religion_chapter3_title, number: religion_chapter3_number)
 religion_book.chapters << religion_chapter3
+
+# A dialogue on personal identity and immortality
+
+# create author
+john_perry = Author.create!(name: "John Perry")
+# create book
+immortality_description = "Perry's excellent dialogue makes a complicated topic stimulating and accessible without any sacrifice of scholarly accuracy or thoroughness. Professionals will appreciate the work's command of the issues and depth of argument, while students will find that it excites interest and imagination. --David M. Rosenthal, CUNY, Lehman College"
+immortality_categories = "philosophy; personal identity; metaphysics"
+immortality_title = "A Dialogue On Personal Identity And Immortality"
+immortality_image_url = "https://images-na.ssl-images-amazon.com/images/I/31zQOjkg3SL._SX314_BO1,204,203,200_.jpg"
+immortality_book = Book.create!(description: immortality_description, author: john_perry, title: immortality_title, categories: immortality_categories, image_url: immortality_image_url)
+# add library record
+immortality_lib_record = LibraryRecord.create!(user: user1, book: immortality_book)
+# add chapters to book
+# template
+immortality_chapter1_content = "This is a record of conversations of Gretchen Weirob, a teacher of philosophy
+at a small Midwestern college, and two of her friends. The conversations took
+place in her hospital room on the three nights before she died from injuries
+sustained in a motorcycle accident. Sam Miller is a chaplain and a longtime
+friend of Weirob’s; Dave Cohen is a former student of hers.
+
+COHEN: I can hardly believe what you say, Gretchen. You are lucid and do not appear
+    to be in great pain. And yet you say things are hopeless?
+    WEIROB: These devices can keep me alive for another day or two at most. Some of my
+    vital organs have been injured beyond anything the doctors know how to repair, apart
+    from certain rather radical measures I have rejected. I am not in much pain. But as I
+    understand it that is not a particularly good sign. My brain was uninjured and I guess
+    that’s why I am as lucid as I ever am. The whole situation is a bit depressing, I fear. But
+    here’s Sam Miller. Perhaps he will know how to cheer me up.
+    MILLER: Good evening, Gretchen. Hello, Dave. I guess there’s not much point in
+    beating around the bush, Gretchen; the medics tell me you’re a goner. Is there anything
+    I can do to help?
+    WEIROB: Crimenetley, Sam! You deal with the dying every day. Don’t you have
+    anything more comforting to say than “Sorry to hear you’re a goner”?
+    MILLER: Well, to tell you the truth, I’m a little at a loss for what to say to you. Most
+    people I deal with are believers like I am. We talk of the prospects for survival. I give
+    assurance that God, who is just and merciful, would not permit such a travesty as that our
+    short life on this earth should be the end of things. But you and I have talked about
+    religious and philosophical issues for years. I have never been able to find in you the least
+    inclination to believe in God; indeed, it’s a rare day when you are sure that your friends
+    have minds, or that you can see your own hand in front of your face, or that there is any
+    reason to believe that the sun will rise tomorrow. How can I hope to comfort you with
+    the prospect of life after death, when I know you will regard it as having no probability
+    whatsoever? 
+
+    WEIROB: I would not require so much to be comforted, Sam. Even the possibility of
+something quite improbable can be comforting, in certain situations. When we used to
+play tennis, I beat you no more than one time in twenty. But this was enough to establish
+the possibility of beating you on any given occasion, and by focusing merely on the
+possibility I remained eager to play. Entombed in a secure prison, thinking our situation
+quite hopeless, we may find unutterable joy in the information that there is, after all, the
+slimmest possibility of escape. Hope provides comfort, and hope does not always require
+probability. But we must believe that what we hope for is at least possible. So I will set
+an easier task for you. Simply persuade me that my survival after the death of this body
+is possible, and I promise to be comforted. Whether you succeed or not, your attempts
+will be a diversion, for you know I like to talk philosophy more than anything else. 
+
+MILLER: But what is possibility, if not reasonable probability?
+WEIROB: I do not mean possible in the sense of likely, or even in the sense of
+conforming to the known laws of physics or biology. I mean possible only in the weakest
+sense—of being conceivable, given the unavoidable facts. Within the next couple of
+days, this body will die. It will be buried and it will rot away. I ask that, given these facts,
+you explain to me how it even makes sense to talk of me continuing to exist. Just explain
+to me what it is I am to imagine, when I imagine surviving, that is consistent with these
+facts, and I shall be comforted.
+MILLER: But then what is there to do? There are many conceptions of immortality, of
+survival past the grave, which all seem to make good sense. Surely not the possibility,
+but only the probability, can be doubted. Take your choice! Christians believe in life,
+with a body, in some hereafter—the details vary, of course, from sect to sect. There is
+the Greek idea of the body as a prison, from which we escape at death—so that we have
+continued life without a body. Then there are conceptions in which, so to speak, we merge
+with the flow of being—
+
+WEIROB: I must cut short your lesson in comparative religion. Survival means
+surviving, no more, no less. I have no doubts that I shall merge with being; plants will
+take root in my remains, and the chemicals that I am will continue to make their
+contribution to life. I am enough of an ecologist to be comforted. But survival, if it is
+anything, must offer comforts of a different sort, the comforts of anticipation. Survival
+means that tomorrow, or sometime in the future, there will be someone who will
+experience, who will see and touch and smell—or at the very least, think and reason and
+remember. And this person will be me. This person will be related to me in such a way
+that it is correct for me to anticipate, to look forward to, those future experiences. And I
+am related to her in such a way that it will be right for her to remember what I have
+thought and done, to feel remorse for what I have done wrong, and pride in what I have
+done right. And the only relation that supports anticipation and memory in this way, is
+simply identity. For it is never correct to anticipate, as happening to oneself, what will
+happen to someone else, is it? Or to remember, as one’s own thoughts and deeds, what
+someone else did? So don’t give me merger with being, or some such nonsense. Give me
+identity, or let’s talk about baseball or fishing—but I’m sorry to get so emotional. I react
+strongly when words which mean one thing are used for another—when one talks about
+survival, but does not mean to say that the same person will continue to exist. It’s such a
+sham!
+MILLER: I’m sorry. I was just trying to stay in touch with the times, if you want to know
+the truth, for when I read modern theology or talk to my students who have studied
+Eastern religions, the notion of survival simply as continued existence of the same person
+seems out of date. Merger with Being! Merger with Being! That’s all I hear. My own
+beliefs are quite simple, if somewhat vague. I think you will live again—with or without
+a body, I don’t know—I draw comfort from my belief that you and I will be together
+again, after I also die. We will communicate, somehow. We will continue to grow
+spiritually. That’s what I believe, as surely as I believe that I am sitting here. For I don’t
+know how God could be excused, if this small sample of life is all that we are allotted; I
+don’t know why He should have created us, if these few years of toil and torment are the
+end of it
+
+WEIROB: Remember our deal, Sam. You don’t have to convince me that survival is
+probable, for we both agree you would not get to first base. You have only to convince
+me that it is possible. The only condition is that it be real survival we are talking about,
+not some up-to-date ersatz survival, which simply amounts to what any ordinary person
+would call totally ceasing to exist.
+MILLER: I guess I just miss the problem, then. Of course, it’s possible. You just continue
+to exist, after your body dies. What’s to be defended or explained? You want details?
+Okay. Two people meet a thousand years from now, in a place that may or may not be
+part of this physical universe. I am one and you are the other. So you must have survived.
+Surely you can imagine that. What else is there to say?
+WEIROB: But in a few days I will quit breathing, I will be put into a coffin, I will be
+buried. And in a few months or a few years I will be reduced to so much humus. That, I
+take it, is obvious, is given. How then can you say that I am one of these persons a
+thousand years from now?
+Suppose I took this box of Kleenex and lit fire to it. It is reduced to ashes and I smash the
+ashes and flush them down the john. Then I say to you, go home and on the shelf will be
+that very box of Kleenex. It has survived! Wouldn’t that be absurd? What sense could
+you make of it? And yet that is just what you say to me. I will rot away. And then, a
+thousand years later, there I will be. What sense does that make?
+MILLER: There could be an identical box of Kleenex at your home, one just like it in
+every respect. And, in this sense, there is no difficulty in there being someone identical
+to you in the Hereafter, though your body has rotted away. 
+
+WEIROB: You are playing with words again. There could be an exactly similar box of
+Kleenex on my shelf. We sometimes use “identical” to mean “exactly similar,” as when
+we speak of “identical twins.” But I am using “identical” in a way in which identity is
+the condition of memory and correct anticipation. If I am told that tomorrow, though I
+will be dead, someone else that looks and sounds and thinks just like me will be alive—
+would that be comforting? Could I correctly anticipate having her experiences? Would
+it make sense for me to fear her pains and look forward to her pleasures? Would it be
+right for her to feel remorse at the harsh way I am treating you? Of course not. Similarity,
+however exact, is not identity. I use identity to mean there is but one thing. If I am to
+survive, there must be one person who lies in this bed now, and who talks to someone in
+your Hereafter ten or a thousand years from now. After all, what comfort could there be
+in the notion of a heavenly imposter, walking around getting credit for the few good
+things I have done?
+MILLER: I’m sorry. I see that I was simply confused. Here is what I should have said. If
+you were merely a live human body—as the Kleenex box is merely cardboard and glue
+in a certain arrangement—then the death of your body would be the end of you. But
+surely you are more than that, fundamentally more than that. What is fundamentally you
+is not your body, but your soul or self or mind.
+WEIROB: Do you mean these words, “soul,” “self,” or “mind” to come to the same
+thing? 
+
+MILLER: Perhaps distinctions could be made, but I shall not pursue them now. I mean
+the nonphysical and non-material aspects of you, your consciousness. It is this that I get
+at with these words, and I don’t think any further distinction is relevant.
+WEIROB: Consciousness? I am conscious, for a while yet. I see, I hear, I think, I
+remember. But “to be conscious”—that is a verb. What is the subject of the verb, the
+thing which is conscious? Isn’t it just this body, the same object that is overweight,
+injured, and lying in bed?—and which will be buried and not be conscious in a day or a
+week at the most?
+MILLER: As you are a philosopher, I would expect you to be less muddled about these
+issues. Did Descartes not draw a clear distinction between the body and the mind,
+between that which is overweight, and that which is conscious? Your mind or soul is
+immaterial, lodged in your body while you are on earth. The two are intimately related
+but not identical. Now clearly, what concerns us in survival is your mind or soul. It is this
+which must be identical to the person before me now, and to the one I expect to see in a
+thousand years in heaven.
+WEIROB: So I am not really this body, but a soul or mind or spirit? And this soul cannot
+be seen or felt or touched or smelt? That is implied, I take it, by the fact that it is
+immaterial?
+MILLER: That’s right. Your soul sees and smells, but cannot be seen or smelt.
+WEIROB: Let me see if I understand you. You would admit that I am the very same
+person with whom you had lunch last week at Dorsey’s?
+MILLER: Of course you are. 
+
+WEIROB: Now when you say I am the same person, if I understand you, that is not a
+remark about this body you see and could touch and I fear can smell. Rather it is a remark
+about a soul, which you cannot see or touch or smell. The fact that the same body that
+now lies in front of you on the bed was across the table from you at Dorsey’s—that would
+not mean that the same person was present on both occasions, if the same soul were not.
+And if, through some strange turn of events, the same soul were present on both
+occasions, but lodged in different bodies, then it would be the same person. Is that right?
+MILLER: You have understood me perfectly. But surely, you understood all of this
+before!
+WEIROB: But wait. I can repeat it, but I’m not sure I understand it. If you cannot see or
+touch or in any way perceive my soul, what makes you think the one you are confronted
+with now is the very same soul you were confronted with at Dorsey’s?
+MILLER: But I just explained. To say it is the same soul and to say it is the same person,
+are the same. And, of course, you are the same person you were before. Who else would
+you be if not yourself? You were Gretchen Weirob, and you are Gretchen Weirob.
+WEIROB: But how do you know you are talking to Gretchen Weirob at all, and not
+someone else, say Barbara Walters or even Mark Spitz!
+MILLER: Well, it’s just obvious. I can see who I am talking to. 
+
+WEIROB: But all you can see is my body. You can see, perhaps, that the same body is
+before you now that was before you last week at Dorsey’s. But you have just said that
+Gretchen Weirob is not a body but a soul. In judging that the same person is before you
+now as was before you then, you must be making a judgment about souls—which, you
+said, cannot be seen or touched or smelt or tasted. And so, I repeat, how do you know?
+MILLER: Well, I can see that it is the same body before me now that was across the table
+at Dorsey’s. And I know that the same soul is connected with the body now that was
+connected with it before. That’s how I know it’s you. I see no difficulty in the matter.
+WEIROB: You reason on the principle, “Same body, same self.”
+MILLER: Yes.
+WEIROB: And would you reason conversely also? If there were in this bed Barbara
+Walters’ body—that is, the body you see every night on the news—would you infer that
+it was not me, Gretchen Weirob, in the bed?
+MILLER: Of course I would. How would you have come by Barbara Walters’ body?
+WEIROB: But then merely extend this principle to Heaven, and you will see that your
+conception of survival is without sense. Surely this very body, which will be buried and
+as I must so often repeat, rot away, will not be in your Hereafter. Different body, different
+person. Or do you claim that a body can rot away on earth, and then still wind up
+somewhere else? Must I bring up the Kleenex box again?
+MILLER: No, I do not claim that. But I also do not extend a principle, found reliable on
+earth, to such a different situation as is represented by the Hereafter. That a correlation
+between bodies and souls has been found on earth does not make it inconceivable or
+impossible that they should separate. Principles found to work in one circumstance may
+not be assumed to work in vastly altered circumstances. January and snow go together
+here, and one would be a fool to expect otherwise. But the principle does not apply in
+southern California. 
+
+WEIROB: So the principle, “same body, same soul,” is a well-confirmed regularity, not
+something you know “a priori.”
+MILLER: By “a priori” you philosophers mean something which can be known without
+observing what actually goes on in the world—as I can know that two plus two equals
+four just by thinking about numbers, and that no bachelors are married, just by thinking
+about the meaning of “bachelor”?
+WEIROB: Yes.
+MILLER: Then you are right. If it was part of the meaning of “same body” that wherever
+we have the same body we have the same soul, it would have to obtain universally, in
+Heaven as well as on earth. But I just claim it is a generalization we know by observation
+on earth, and it need not automatically extend to Heaven. 
+
+WEIROB: But where do you get this principle? It simply amounts to a correlation
+    between being confronted with the same body and being confronted with the same soul.
+    To establish such a correlation in the first place, surely one must have some other means 
+    6
+    of judging sameness of soul. You do not have such a means; your principle is without
+    foundation; either you really do not know the person before you now is Gretchen Weirob,
+    the very same person you lunched with at Dorsey’s, or what you do know has nothing to
+    do with sameness of some immaterial soul. 
+
+        MILLER: Hold on, hold on. You know I can’t follow you when you start spitting out
+arguments like that. Now what is this terrible fallacy I’m supposed to have committed?
+WEIROB: I’m sorry. I get carried away. Here—by way of a peace offering—have one
+of the chocolates Dave brought.
+MILLER: Very tasty. Thank you.
+WEIROB: Now why did you choose that one?
+MILLER: Because it had a certain swirl on the top which shows that it is a caramel.
+WEIROB: That is, a certain sort of swirl is correlated with a certain type of filling—the
+swirls with caramel, the rosettes with orange, and so forth.
+MILLER: Yes. When you put it that way, I see an analogy. Just as I judged that the filling
+would be the same in this piece as in the last piece that I ate with such a swirl, so I judge
+that the soul with which I am conversing is the same as the last soul versed when sitting
+across from that the outer wrapping and infer what is inside.
+WEIROB: But how did you come to realize that swirls of that sort and caramel insides
+were so associated?
+MILLER: Why, from eating a great many of them over the years. Whenever I bit into a
+candy with that sort of swirl, it was filled with caramel.
+WEIROB: Could you have established the correlation had you never been allowed to bite
+into a candy and never seen what happened when someone else bit into one? You could
+have formed the hypothesis, “same swirl, same filling.” But could you have ever
+established it?
+MILLER: It seems not.
+WEIROB: So your inference, in a particular case, to the identity of filling from the
+identity of swirl would be groundless?
+MILLER: Yes, it would. I think I see what is coming. 
+
+WEIROB: I’m sure you do. Since you can never, so to speak, bite into my soul, can never
+    see or touch it, you have no way of testing your hypothesis that sameness of body means
+    sameness of self.
+    MILLER: I daresay you are right. But now I’m a bit lost. What is supposed to follow
+    from all of this?
+    WEIROB: If, as you claim, identity of persons consisted in identity of immaterial
+    unobservable souls, then judgments of personal identity of the sort we make every day
+    whenever we greet a friend or avoid a pest are really judgments about such souls.
+    MILLER: Right. 
+
+    WEIROB: But if such judgments were really about souls, they would all be groundless
+and without foundation. For we have no direct method of observing sameness of soul,
+and so—and this is the point made by the candy example—we can have no indirect
+method either.
+MILLER: That seems fair.
+WEIROB: But our judgments about persons are not all simply groundless and silly, so
+we must not be judging of immaterial souls after all.
+MILLER: Your reasoning has some force. But I suspect the problem lies in my defense
+of my position, and not the position itself. Look here—there is a way to test the
+hypothesis of a correlation after all. When I entered the room, I expected you to react just
+as you did—argumentatively and skeptically. Had the person with this body reacted
+completely differently perhaps I would have been forced to conclude it was not you. For
+example, had she complained about not being able to appear on the six o’clock news, and
+missing Harry Reasoner, and so forth, I might eventually have been persuaded it was
+Barbara Walters and not you. Similarity of psychological characteristics—a person’s
+attitudes, beliefs, memories, prejudices, and the like—is observable. These are correlated
+with identity of body on the one side, and of course with sameness of soul on the other.
+So the correlation between body and soul can be established after all by this intermediate
+link.
+WEIROB: And how do you know that?
+MILLER: Know what?
+WEIROB: That where we have sameness of psychological characteristics, we have
+sameness of soul.
+
+MILLER: Well, now you are really being just silly. The soul or mind is just that which
+is responsible for one’s character, memory, belief. These are aspects of the mind, just as
+one’s height, weight, and appearance are aspects of the body.
+WEIROB: Let me grant for the sake of argument that belief, character, memory, and so
+forth are states of mind. That is, I suppose, I grant that what one thinks and feels is due
+to the states one’s mind is in at that time. And I shall even grant that a mind is an
+immaterial thing—though I harbor the gravest doubts that this is so. I do not see how it
+follows that similarity of such traits requires, or is evidence to the slightest degree, for
+identity of the mind or soul.
+Let me explain my point with an analogy. If we were to walk out of this room, down past
+the mill and out towards Wilbur, what would we see?
+MILLER: We would come to the Blue River, among other things.
+WEIROB: And how would you recognize the Blue River? I mean, of course if you left
+from here, you would scarcely expect to hit the Platte or Niobrara. But suppose you were
+actually lost, and came across the Blue River in your wandering, just at that point where
+an old dam partly blocks the flow. Couldn’t you recognize it? 
+
+MILLER: Yes, I’m sure as soon as I saw that part of the river I would again know where
+I was.
+WEIROB: And how would you recognize it?
+MILLER: Well, the turgid brownness of the water, the sluggish flow, the filth washed up
+on the banks, and such.
+WEIROB: In a word, the states of the water which makes up the river at the time you see
+it.
+MILLER: Right.
+WEIROB: If you saw blue clean water, with bass jumping, you would know it wasn’t the
+Blue River.
+MILLER: Of course.
+WEIROB: So you expect, each time you see the Blue, to see the water, which makes it
+up, in similar states—not always exactly the same, for sometimes it’s a little dirtier, but
+by and large similar.
+MILLER: Yes, but what do you intend to make of this?
+WEIROB: Each time you see the Blue, it consists of different water. The water that was
+in it a month ago may be in Tuttle Creek Reservoir or in the Mississippi or in the Gulf of
+Mexico by now. So the similarity of states of water, by which you judge the sameness of
+river, does not require identity of the water which is in those states at these various times.
+MILLER: And?
+WEIROB: And so just because you judge as to personal identity by reference to similarity
+of states of mind, it does not follow that the mind, or soul, is the same in each case. My
+point is this. For all you know, the immaterial soul which you think is lodged in my body
+might change from day to day, from hour to hour, from minute to minute, replaced each
+time by another soul psychologically similar. You cannot see it or touch it, so how would
+you know? 
+
+MILLER: Are you saying I don’t really know who you are?
+WEIROB: Not at all. You are the one who says personal identity consists in sameness of
+this immaterial, unobservable, invisible, untouchable soul. I merely point out that if it did
+consist in that, you would have no idea who I am. Sameness of body would not
+necessarily mean sameness of person. Sameness of psychological characteristics would
+not necessarily mean sameness of person. I am saying that if you do know who I am then
+you are wrong that personal identity consists in sameness of immaterial soul.
+MILLER: I see. But wait. I believe my problem is that I simply forgot a main tenet of my
+theory. The correlation can be established in my own case. I know that my soul and my
+body are intimately and consistently found together. From this one case I can generalize,
+at least as concerns life in this world, that sameness of body is a reliable sign of sameness
+of soul. This leaves me free to regard it as intelligible, in the case of death, that the link
+between the particular soul and the particular body it has been joined with is broken
+
+WEIROB: This would be quite an extrapolation, wouldn’t it, from one case directly
+    observed, to a couple of billion in which only the body is observed? For I take it that we
+    are in the habit of assuming, for every person now on earth, as well as those who have
+    already come and gone, that the principle “one body, one soul” is in effect.
+    MILLER: This does not seem an insurmountable obstacle. Since there is nothing special
+    about my case, I assume the arrangement I find in it applies universally until given some
+    reason to believe otherwise. And I never have been.
+    WEIROB: Let’s let that pass. I have another problem that is more serious. How is it that
+    you know in your own case that there is a single soul which has been so consistently
+    connected with your body?
+    MILLER: Now you really cannot be serious, Gretchen. How can I doubt that I am the
+    same person I was? Is there anything more clear and distinct, less susceptible to doubt?
+    How do you expect me to prove anything to you, when you are capable of denying my
+    own continued existence from second to second? Without knowledge of our own identity,
+    everything we think and do would be senseless. How could I think if I did not suppose
+    that the person who begins my thought is the one who completes it? When I act, do I not
+    assume that the person who forms the intention is the very one who performs the action?
+    WEIROB: But I grant you that a single person has been associated with your body since
+    you were born. The question is whether one immaterial soul has been so associated—or
+    more precisely, whether you are in a position to know it. You believe that a judgment
+    that one and the same person has had your body all these many years is a judgment that
+    one and the same immaterial soul has been lodged in it. I say that such judgments
+    concerning the soul are totally mysterious, and that if our knowledge of sameness of
+    persons consisted in knowledge of sameness of immaterial soul, it too would be totally
+    mysterious. To point out, as you do, that it is not mysterious, but perhaps the most secure
+    knowledge we have, the foundation of all reason and action, is simply to make the point
+    that it cannot consist of knowledge of identity of an immaterial soul.
+    MILLER: You have simply asserted, and not established, that my judgment that a single
+    soul has been lodged in my body these many years is mysterious. 
+
+    WEIROB: Well, consider these possibilities. One is that a single soul, one and the same,
+has been with this body I call mine since it was born. The other is that one soul was
+associated with it until five years ago and then another, psychologically similar,
+inheriting all the old memories and beliefs, took over. A third hypothesis is that every
+five years a new soul takes over. A fourth is that every five minutes a new soul takes
+over. The most radical is that there is a constant flow of souls through this body, each
+psychologically similar to the preceding, as there is a constant flow of water molecules
+down the Blue. What evidence do I have that the first hypothesis, the “single soul
+hypothesis” is true, and not one of the others? Because I am the same person I was five
+minutes or five years ago? But the issue in question is simply whether from sameness of
+person, which isn’t in doubt, we can infer sameness of soul. Sameness of body? But how
+do I establish a stable relationship between soul and body? Sameness of thoughts and
+sensations? But they are in constant flux. By the nature of the case, if the soul cannot be
+observed, it cannot be observed to be the same. Indeed, no sense has ever been assigned
+to the phrase “same soul.” Nor could any sense be attached to it! One would have to say 
+
+what a single soul looked like or felt like, how an encounter with a single soul at different
+times differed from encounters with different souls. But this can hardly be done, since a
+soul according to your conception doesn’t look or feel like anything at all. And so of
+course “souls” can afford no principle of identity. And so they cannot be used to bridge
+the gulf between my existence now and my existence in the hereafter.
+MILLER: Do you doubt the existence of your own soul?
+WEIROB: I haven’t based my argument on there being no immaterial souls of the sort
+you describe, but merely on their total irrelevance to questions of personal identity, and
+so to questions of personal survival. I do indeed harbor grave doubts whether there are
+any immaterial souls of the sort to which you appeal. Can we have a notion of a soul
+unless we have a notion of the same soul? But I hope you do not think that means I doubt
+my own existence. I think I lie here, overweight and conscious. I think you can see me,
+not just some outer wrapping, for I think I am just a live human body. But that is not the
+basis of my argument. I give you these souls. I merely observe that they can by their
+nature provide no principle of personal identity.
+MILLER: I admit I have no answer.
+I’m afraid I do not comfort you, though I have perhaps provided you with some
+entertainment. Emerson said that a little philosophy turns one away from religion, but
+that deeper understanding brings one back. I know no one who has thought so long and
+hard about philosophy as you have. Will it never lead you back to a religious frame of
+mind?
+WEIROB: My former husband used to say that a little philosophy turns one away from
+religion, and more philosophy makes one a pain in the neck. Perhaps he was closer to the
+truth than Emerson.
+MILLER: Perhaps he was. But perhaps by tomorrow night I will have come up with a
+better argument.
+WEIROB: I hope I live to hear it.
+"
+immortality_chapter1_title = "The First Night"
+immortality_chapter1_number = 1
+immortality_chapter1 = Chapter.create!(book: immortality_book, content: immortality_chapter1_content, title: immortality_chapter1_title, number: immortality_chapter1_number)
+immortality_book.chapters << immortality_chapter1
+
+# meditations on first philosophy
+
+# create author
+rene_descartes = Author.create!(name: "Rene Descartes")
+# create book
+meditation_description = "Descartes's Meditations on First Philosophy remains one of the most widely studied works of Western philosophy. This volume is a refreshed and updated edition of John Cottingham's bestselling 1996 edition, based on his translation in the acclaimed three-volume Cambridge edition of The Philosophical Writings of Descartes. It presents the complete text of Descartes's central metaphysical masterpiece, the Meditations, in clear, readable modern English, and it offers the reader additional material in a thematic abridgement of the Objections and Replies, providing a deeper understanding of how Descartes developed and clarified his arguments in response to critics. Cottingham also provides an updated introduction, together with a substantially revised bibliography, taking into account recent literature and developments in Descartes studies. The volume will be a vital resource for students reading the Meditations, as well as those studying Descartes and early modern philosophy."
+meditation_categories = "philosophy; metaphysics; epistemology; philosophy of mind; philosophy of religion"
+meditation_title = "Descartes' Meditations on First Philosophy"
+meditation_image_url = "https://images-na.ssl-images-amazon.com/images/I/41SJQ20dmgL._SX329_BO1,204,203,200_.jpg"
+meditation_book = Book.create!(description: meditation_description, author: rene_descartes, title: meditation_title, categories: meditation_categories, image_url: meditation_image_url)
+# add library record
+meditation_lib_record = LibraryRecord.create!(user: user1, book: meditation_book)
+# add chapters to book
+# template
+meditation_chapter1_content = " The motive which induces me to present to you this
+Treatise is so excellent, and, when you become acquainted with
+its design, I am convinced that you will also have so
+excellent a motive for taking it under your protection, that I
+feel that I cannot do better, in order to render it in some
+sort acceptable to you, than in a few words to state what I
+have set myself to do.
+
+     I have always considered that the two questions
+respecting God and the Soul were the chief of those that ought
+to be demonstrated by philosophical rather than theological
+argument.  For although it is quite enough for us faithful
+ones to accept by means of faith the fact that the human soul
+does not perish with the body, and that God exists, it
+certainly does not seem possible ever to persuade infidels of
+any religion, indeed, we may almost say, of any moral virtue,
+unless, to begin with, we prove these two facts by means of
+the natural reason.  And inasmuch as often in this life
+greater rewards are offered for vice than for virtue, few
+people would prefer the right to the useful, were they
+restrained neither by the fear of God nor the expectation of
+another life; and although it is absolutely true that we must
+believe that there is a God, because we are so taught in the
+Holy Scriptures, and, on the other hand, that we must believe
+the Holy Scriptures because they come from God (the reason of
+this is, that, faith being a gift of God, He who gives the
+grace to cause us to believe other things can likewise give it
+to cause us to believe that He exists), we nevertheless could
+not place this argument before infidels, who might accuse us
+of reasoning in a circle.  And, in truth, I have noticed that
+you, along with all the theologians, did not only affirm that
+the existence of God may be proved by the natural reason, but
+also that it may be inferred from the Holy Scriptures, that
+knowledge about Him is much clearer than that which we have of
+many created things, and, as a matter of fact, is so easy to
+acquire, that those who have it not are culpable in their
+ignorance.  This indeed appears from the Wisdom of Solomon,
+chapter xiii., where it is said \"Howbeit they are not to be
+excused; for if their understanding was so great that they
+could discern the world and the creatures, why did they not
+rather find out the Lord thereof?\"  and in Romans, chapter i.,
+it is said that they are \"without excuse\"; and again in the
+same place, by these words \"that which may be known of God is
+manifest in them,\" it seems as through we were shown that all
+that which can be known of God may be made manifest by means
+which are not derived from anywhere but from ourselves, and
+from the simple consideration of the nature of our minds.
+Hence I thought it not beside my purpose to inquire how this
+is so, and how God may be more easily and certainly known than
+the things of the world.
+
+     And as regards the soul, although many have considered
+that it is not easy to know its nature, and some have even
+dared to say that human reasons have convinced us that it
+would perish with the body, and that faith alone could believe
+the contrary, nevertheless, inasmuch as the Lateran Council
+held under Leo X (in the eighth session) condemns these
+tenets, and as Leo expressly ordains Christian philosophers to
+refute their arguments and to employ all their powers in
+making known the truth, I have ventured in this treatise to
+undertake the same task.
+
+     More than that, I am aware that the principal reason
+which causes many impious persons not to desire to believe
+that there is a God, and that the human soul is distinct from
+the body, is that they declare that hitherto no one has been
+able to demonstrate these two facts; and although I am not of
+their opinion but, on the contrary, hold that the greater part
+of the reasons which have been brought forward concerning
+these two questions by so many great men are, when they are
+rightly understood, equal to so many demonstrations, and that
+it is almost impossible to invent new ones, it is yet in my
+opinion the case that nothing more useful can be accomplished
+in philosophy than once for all to seek with care for the best
+of these reasons, and to set them forth in so clear and exact
+a manner, that it will henceforth be evident to everybody that
+they are veritable demonstrations.  And, finally, inasmuch as
+it was desired that I should undertake this task by many who
+were aware that I had cultivated a certain Method for the
+resolution of difficulties of every kind in the Sciences仟
+method which it is true is not novel, since there is nothing
+more ancient than the truth, but of which they were aware that
+I had made use successfully enough in other matters of
+difficulty付 have thought that it was my duty also to make
+trial of it in the present matter.
+
+     Now all that I could accomplish in the matter is
+contained in this Treatise.  Not that I have here drawn
+together all the different reasons which might be brought
+forward to serve as proofs of this subject:  for that never
+seemed to be necessary excepting when there was no one single
+proof that was certain.  But I have treated the first and
+principal ones in such a manner that I can venture to bring
+them forward as very evident and very certain demonstrations.
+And more than that, I will say that these proofs are such that
+I do not think that there is any way open to the human mind by
+which it can ever succeed in discovering better.  For the
+importance of the subject, and the glory of God to which all
+this relates, constrain me to speak here somewhat more freely
+of myself than is my habit.  Nevertheless, whatever certainty
+and evidence I find in my reasons, I cannot persuade myself
+that all the world is capable of understanding them.  Still,
+just as in Geometry there are many demonstrations that have
+been left to us by Archimedes, by Apollonius, by Pappus, and
+others, which are accepted by everyone as perfectly certain
+and evident (because they clearly contain nothing which,
+considered by itself, is not very easy to understand, and as
+all through that which follows has an exact connection with,
+and dependence on that which precedes), nevertheless, because
+they are somewhat lengthy, and demand a mind wholly devoted
+tot heir consideration, they are only taken in and understood
+by a very limited number of persons.  Similarly, although I
+judge that those of which I here make use are equal to, or
+even surpass in certainty and evidence, the demonstrations of
+Geometry, I yet apprehend that they cannot be adequately
+understood by many, both because they are also a little
+lengthy and dependent the one on the other, and principally
+because they demand a mind wholly free of prejudices, and one
+which can be easily detached from the affairs of the senses.
+And, truth to say, there are not so many in the world who are
+fitted for metaphysical speculations as there are for those of
+Geometry.  And more than that; there is still this difference,
+that in Geometry, since each one is persuaded that nothing
+must be advanced of which there is not a certain
+demonstration, those who are not entirely adepts more
+frequently err in approving what is false, in order to give
+the impression that they understand it, than in refuting the
+true.  But the case is different in philosophy where everyone
+believes that all is problematical, and few give themselves to
+the search after truth; and the greater number, in their
+desire to acquire a reputation for boldness of thought,
+arrogantly combat the most important of truths3.
+
+      That is why, whatever force there may be in my
+reasonings, seeing they belong to philosophy, I cannot hope
+that they will have much effect on the minds of men, unless
+you extend to them your protection.  But the estimation in
+which you Company is universally held is so great, and the
+name of SORBONNE carries with it so much authority, that, next
+to the Sacred Councils, never has such deference been paid to
+the judgment of any Body, not only in what concerns the faith,
+but also in what regards human philosophy as well:  everyone
+indeed believes that it is not possible to discover elsewhere
+more perspicacity and solidity, or more integrity and wisdom
+in pronouncing judgment.  For this reason I have no doubt that
+if you deign to take the trouble in the first place of
+correcting this work (for being conscious not only of my
+infirmity, but also of my ignorance, I should not dare to
+state that it was free from errors), and then, after adding to
+it these things that are lacking to it, completing those which
+are imperfect, and yourselves taking the trouble to give a
+more ample explanation of those things which have need of it,
+or at least making me aware of the defects so that I may apply
+myself to remedy them4 叱hen this is done and when finally the
+reasonings by which I prove that there is a God, and that the
+human soul differs from the body, shall be carried to that
+point of perspicuity to which I am sure they can be carried in
+order that they may be esteemed as perfectly exact
+demonstrations, if you deign to authorize your approbation and
+to render public testimony to their truth and certainty, I do
+not doubt, I say, that henceforward all the errors and false
+opinions which have ever existed regarding these two questions
+will soon be effaced from the minds of men.  For the truth
+itself will easily cause all men of mind and learning to
+subscribe to your judgment; and your authority will cause the
+atheists, who are usually more arrogant than learned or
+judicious, to rid themselves of their spirit of contradiction
+or lead them possibly themselves to defend the reasonings
+which they find being received as demonstrations by all
+persons of consideration, lest they appear not to understand
+them.  And, finally, all others will easily yield to such a
+mass of evidence, and there will be none who dares to doubt
+the existence of God and the real and true distinction between
+the human soul and the body.  It is for you now in your
+singular wisdom to judge of the importance of the
+establishment of such beliefs [you who see the disorders
+produced by the doubt of them]5 .  But it would not become me
+to say more in consideration of the cause of God and religion
+to those who have always been the most worthy supports of the
+Catholic Church."
+
+meditation_chapter1_title = "TO THE MOST WISE AND ILLUSTRIOUS THE
+
+DEAN AND DOCTORS OF THE SACRED
+
+FACULTY OF THEOLOGY IN PARIS."
+meditation_chapter1_number = 1
+meditation_chapter1 = Chapter.create!(book: meditation_book, content: meditation_chapter1_content, title: meditation_chapter1_title, number: meditation_chapter1_number)
+meditation_book.chapters << meditation_chapter1
+
+
+meditation_chapter2_content = "Of the things which may be brought within the sphere of the
+
+doubtful.
+
+     
+
+It is now some years since I detected how many were the
+false beliefs that I had from my earliest youth admitted as
+true, and how doubtful was everything I had since constructed
+on this basis; and from that time I was convinced that I must
+once for all seriously undertake to rid myself of all the
+opinions which I had formerly accepted, and commence to build
+anew from the foundation, if I wanted to establish any firm
+and permanent structure in the sciences.  But as this
+enterprise appeared to be a very great one, I waited until I
+had attained an age so mature that I could not hope that at
+any later date I should be better fitted to execute my design.
+This reason caused me to delay so long that I should feel that
+I was doing wrong were I to occupy in deliberation the time
+that yet remains to me for action.  To-day, then, since very
+opportunely for the plan I have in view I have delivered my
+mind from every care [and am happily agitated by no passions]
+and since I have procured for myself an assured leisure in a
+peaceable retirement, I shall at last seriously and freely
+address myself to the general upheaval of all my former
+opinions.
+
+Now for this object it is not necessary that I should
+show that all of these are false付 shall perhaps never arrive
+at this end.  But inasmuch as reason already persuades me that
+I ought no less carefully to withhold my assent from matters
+which are not entirely certain and indubitable than from those
+which appear to me manifestly to be false, if I am able to
+find in each one some reason to doubt, this will suffice to
+justify my rejecting the whole.  And for that end it will not
+be requisite that I should examine each in particular, which
+would be an endless undertaking; for owing to the fact that
+the destruction of the foundations of necessity brings with it
+the downfall of the rest of the edifice, I shall only in the
+first place attack those principles upon which all my former
+opinions rested.
+
+All that up to the present time I have accepted as most
+true and certain I have learned either from the senses or
+through the senses; but it is sometimes proved to me that
+these senses are deceptive, and it is wiser not to trust
+entirely to anything by which we have once been deceived.
+
+But it may be that although the senses sometimes deceive
+us concerning things which are hardly perceptible, or very far
+away, there are yet many others to be met with as to which we
+cannot reasonably have any doubt, although we recognise them
+by their means.  For example, there is the fact that I am
+here, seated by the fire, attired in a dressing gown, having
+this paper in my hands and other similar matters.  And how
+could I deny that these hands and this body are mine, were it
+not perhaps that I compare myself to certain persons, devoid
+of sense, whose cerebella are so troubled and clouded by the
+violent vapours of black bile, that they constantly assure us
+that they think they are kings when they are really quite
+poor, or that they are clothed in purple when they are really
+without covering, or who imagine that they have an earthenware
+head or are nothing but pumpkins or are made of glass.  But
+they are mad, and I should not be any the less insane were I
+to follow examples so extravagant.
+
+At the same time I must remember that I am a man, and
+that consequently I am in the habit of sleeping, and in my
+dreams representing to myself the same things or sometimes
+even less probable things, than do those who are insane in
+their waking moments.  How often has it happened to me that in
+the night I dreamt that I found myself in this particular
+place, that I was dressed and seated near the fire, whilst in
+reality I was lying undressed in bed!  At this moment it does
+indeed seem to me that it is with eyes awake that I am looking
+at this paper; that this head which I move is not asleep, that
+it is deliberately and of set purpose that I extend my hand
+and perceive it; what happens in sleep does not appear so
+clear nor so distinct as does all this.  But in thinking over
+this I remind myself that on many occasions I have in sleep
+been deceived by similar illusions, and in dwelling carefully
+on this reflection I see so manifestly that there are no
+certain indications by which we may clearly distinguish
+wakefulness from sleep that I am lost in astonishment.  And my
+astonishment is such that it is almost capable of persuading
+me that I now dream.
+
+Now let us assume that we are asleep and that all these
+particulars, e.g. that we open our eyes, shake our head,
+extend our hands, and so on, are but false delusions; and let
+us reflect that possibly neither our hands nor our whole body
+are such as they appear to us to be.  At the same time we must
+at least confess that the things which are represented to us
+in sleep are like painted representations which can only have
+been formed as the counterparts of something real and true,
+and that in this way those general things at least, i.e. eyes,
+a head, hands, and a whole body, are not imaginary things, but
+things really existent.  For, as a matter of fact, painters,
+even when they study with the greatest skill to represent
+sirens and satyrs by forms the most strange and extraordinary,
+cannot give them natures which are entirely new, but merely
+make a certain medley of the members of different animals; or
+if their imagination is extravagant enough to invent something
+so novel that nothing similar has ever before been seen, and
+that then their work represents a thing purely fictitious and
+absolutely false, it is certain all the same that the colours
+of which  this is composed are necessarily real.  And for the
+same reason, although these general things, to with, [a body],
+eyes, a head, hands, and such like, may be imaginary, we are
+bound at the same time to confess that there are at least some
+other objects yet more simple and more universal, which are
+real and true; and of these just in the same way as with
+certain real colours, all these images of things which dwell
+in our thoughts, whether true and real or false and fantastic,
+are formed.
+
+To such a class of things pertains corporeal nature in
+general, and its extension, the figure of extended things,
+their quantity or magnitude and number, as also the place in
+which they are, the time which measures their duration, and so
+on.
+
+That is possibly why our reasoning is not unjust when we
+conclude from this that Physics, Astronomy, Medicine and all
+other sciences which have as their end the consideration of
+composite things, are very dubious and uncertain; but that
+Arithmetic, Geometry and other sciences of that kind which
+only treat of things that are very simple and very general,
+without taking great trouble to ascertain whether they are
+actually existent or not, contain some measure of certainty
+and an element of the indubitable.  For whether I am awake or
+asleep, two and three together always form five, and the
+square can never have more than four sides, and it does not
+seem possible that truths so clear and apparent can be
+suspected of any falsity [or uncertainty].
+
+Nevertheless I have long had fixed in my mind the belief
+that an all-powerful God existed by whom I have been created
+such as I am.  But how do I know that He has not brought it to
+pass that there is no earth, no heaven, no extended body, no
+magnitude, no place, and that nevertheless [I possess the
+perceptions of all these things and that] they seem to me to
+exist just exactly as I now see them?  And, besides, as I
+sometimes imagine that others deceive themselves in the things
+which they think they know best, how do I know that I am not
+deceived every time that I add two and three, or count the
+sides of a square, or judge of things yet simpler, if anything
+simpler can be imagined?  But possibly God has not desired
+that I should be thus deceived, for He is said to be supremely
+good.  If, however, it is contrary to His goodness to have
+made me such that I constantly deceive myself, it would also
+appear to be contrary to His goodness to permit me to be
+sometimes deceived, and nevertheless I cannot doubt that He
+does permit this.
+
+There may indeed be those who would prefer to deny the
+existence of a God so powerful, rather than believe that all
+other things are uncertain.  But let us not oppose them for
+the present, and grant that all that is here said of a God is
+a fable; nevertheless in whatever way they suppose that I have
+arrived at the state of being that I have reached叱hether they
+attribute it to fate or to accident, or make out that it is by
+a continual succession of antecedents, or by some other
+method叫ince to err and deceive oneself is a defect, it is
+clear that the greater will be the probability of my being so
+imperfect as to deceive myself ever, as is the Author to whom
+they assign my origin the less powerful.  To these reasons I
+have certainly nothing to reply, but at the end I feel
+constrained to confess that there is nothing in all that I
+formerly believed to be true, of which I cannot in some
+measure doubt, and that not merely through want of thought or
+through levity, but for reasons which are very powerful and
+maturely considered; so that henceforth I ought not the less
+carefully to refrain from giving credence to these opinions
+than to that which is manifestly false, if I desire to arrive
+at any certainty [in the sciences].
+
+But it is not sufficient to have made these remarks, we
+must also be careful to keep them in mind.  For these ancient
+and commonly held opinions still revert frequently to my mind,
+long and familiar custom having given them the right to occupy
+my mind against my inclination and rendered them almost
+masters of my belief; nor will I ever lose the habit of
+deferring to them or of placing my confidence in them, so long
+as I consider them as they really are, i.e. opinions in some
+measure doubtful, as I have just shown, and at the same time
+highly probable, so that there is much more reason to believe
+in than to deny them.  That is why I consider that I shall not
+be acting amiss, if, taking of set purpose a contrary belief,
+I allow myself to be deceived, and for a certain time pretend
+that all these opinions are entirely false and imaginary,
+until at last, having thus balanced my former prejudices with
+my latter [so that they cannot divert my opinions more to one
+side than to the other], my judgment will no longer be
+dominated by bad usage or turned away from the right knowledge
+of the truth.  For I am assured that there can be neither
+peril nor error in this course, and that I cannot at present
+yield too much to distrust, since I am not considering the
+question of action, but only of knowledge.
+
+I shall then suppose, not that God who is supremely good
+and the fountain of truth, but some evil genius not less
+powerful than deceitful, has employed his whole energies in
+deceiving me; I shall consider that the heavens, the earth,
+colours, figures, sound, and all other external things are
+nought but the illusions and dreams of which this genius has
+availed himself in order to lay traps for my credulity; I
+shall consider myself as having no hands, no eyes, no flesh,
+no blood, nor any senses, yet falsely believing myself to
+possess all these things; I shall remain obstinately attached
+to this idea, and if by this means it is not in my power to
+arrive at the knowledge of any truth, I may at least do what
+is in my power [i.e. suspend my judgment], and with firm
+purpose avoid giving credence to any false thing, or being
+imposed upon by this arch deceiver, however powerful and
+deceptive he may be.  But this task is a laborious one, and
+insensibly a certain lassitude leads me into the course of my
+ordinary life.  And just as a captive who in sleep enjoys an
+imaginary liberty, when he begins to suspect that his liberty
+is but a dream, fears to awaken, and conspires with these
+agreeable illusions that the deception may be prolonged, so
+insensibly of my own accord I fall back into my former
+opinions, and I dread awakening from this slumber, lest the
+laborious wakefulness which would follow the tranquillity of
+this repose should have to be spent not in daylight, but in
+the excessive darkness of the difficulties which have just
+been discussed.
+"
+meditation_chapter2_title = "Meditation I"
+meditation_chapter2_number = 2
+meditation_chapter2 = Chapter.create!(book: meditation_book, content: meditation_chapter2_content, title: meditation_chapter2_title, number: meditation_chapter2_number)
+meditation_book.chapters << meditation_chapter2
+
+
+
+
+meditation_chapter3_content = "Of the Nature of the Human Mind; and that it is more easily
+
+known than the Body.
+
+          
+
+The Meditation of yesterday filled my mind with so many
+doubts that it is no longer in my power to forget them.  And
+yet I do not see in what manner I can resolve them; and, just
+as if I had all of a sudden fallen into very deep water, I am
+so disconcerted that I can neither make certain of setting my
+feet on the bottom, nor can I swim and so support myself on
+the surface.  I shall nevertheless make an effort and follow
+anew the same path as that on which I yesterday entered, i.e.
+I shall proceed by setting aside all that in which the least
+doubt could be supposed to exist, just as if I had discovered
+that it was absolutely false; and I shall ever follow in this
+road until I have met with something which is certain, or at
+least, if I can do nothing else, until I have learned for
+certain that there is nothing in the world that is certain.
+Archimedes, in order that he might draw the terrestrial globe
+out of its place, and transport it elsewhere, demanded only
+that one point should be fixed and immoveable; in the same way
+I shall have the right to conceive high hopes if I am happy
+enough to discover one thing only which is certain and
+indubitable.
+
+I suppose, then, that all the things that I see are
+false; I persuade myself that nothing has ever existed of all
+that my fallacious memory represents to me.  I consider that I
+possess no senses; I imagine that body, figure, extension,
+movement and place are but the fictions of my mind.  What,
+then, can be esteemed as true?  Perhaps nothing at all, unless
+that there is nothing in the world that is certain.
+
+But how can I know there is not something different from
+those things that I have just considered, of which one cannot
+have the slightest doubt?  Is there not some God, or some
+other being by whatever name we call it, who puts these
+reflections into my mind?  That is not necessary, for is it
+not possible that I am capable of producing them myself?  I
+myself, am I not at least something?  But I have already
+denied that I had senses and body.  Yet I hesitate, for what
+follows from that?  Am I so dependent on body and senses that
+I cannot exist without these?  But I was persuaded that there
+was nothing in all the world, that there was no heaven, no
+earth, that there were no minds, nor any bodies:  was I not
+then likewise persuaded that I did not exist?  Not at all; of
+a surety I myself did exist since I persuaded myself of
+something [or merely because I thought of something].  But
+there is some deceiver or other, very powerful and very
+cunning, who ever employs his ingenuity in deceiving me.  Then
+without doubt I exist also if he deceives me, and let him
+deceive me as much as he will, he can never cause me to be
+nothing so long as I think that I am something.  So that after
+having reflected well and carefully examined all things, we
+must come to the definite conclusion that this proposition:  I
+am, I exist, is necessarily true each time that I pronounce
+it, or that I mentally conceive it.
+
+But I do not yet know clearly enough what I am, I who am
+certain that I am; and hence I must be careful to see that I
+do not imprudently take some other object in place of myself,
+and thus that I do not go astray in respect of this knowledge
+that I hold to be the most certain and most evident of all
+that I have formerly learned.  That is why I shall now
+consider anew what I believed myself to be before I embarked
+upon these last reflections; and of my former opinions I shall
+withdraw all that might even in a small degree be invalidated
+by the reasons which I have just brought forward, in order
+that there may be nothing at all left beyond what is
+absolutely certain and indubitable.
+
+What then did I formerly believe myself to be?
+Undoubtedly I believed myself to be a man.  But what is a man?
+Shall I say a reasonable animal?  Certainly not; for then I
+should have to inquire what an animal is, and what is
+reasonable; and thus from a single question I should
+insensibly fall into an infinitude of others more difficult;
+and I should not wish to waste the little time and leisure
+remaining to me in trying to unravel subtleties like these.
+But I shall rather stop here to consider the thoughts which of
+themselves spring up in my mind, and which were not inspired
+by anything beyond my own nature alone when I applied myself
+to the consideration of my being.  In the first place, the, I
+considered myself as having a face, hands, arms, and all that
+system of members composed on bones and flesh as seen in a
+corpse which I designated by the name of body.  In addition to
+this I considered that I was nourished, that I walked, that I
+felt, and that I thought, and I referred all these actions to
+the soul:  but I did not stop to consider what the soul was,
+or if I did stop, I imagined that it was something extremely
+rare and subtle like a wind, a flame, or an ether, which was
+spread throughout my grosser parts.  As to body I had no
+manner of doubt about its nature, but thought I had a very
+clear knowledge of it; and if I had desired to explain it
+according to the notions that I had then formed of it, I
+should have described it thus:  By the body I understand all
+that which can be defined by a certain figure:  something
+which can be confined in a certain place, and which can fill a
+given space in such a way that every other body will be
+excluded from it; which can be perceived either by tough, or
+by sight, or by hearing, or by taste, or by smell:  which can
+be moved in many ways not, in truth, by itself, but by
+something which is foreign to it, by which it is touched [and
+from which it receives impressions]:  for to have the power of
+self-movement, as also of feeling or of thinking, I did not
+consider to appertain to the nature of body:  on the contrary,
+I was rather astonished to find that faculties similar to them
+existed in some bodies.
+
+But what am I, now that I suppose that there is a certain
+genius which is extremely powerful, and, if I may say so,
+malicious, who employs all his powers in deceiving me?  Can I
+affirm that I possess the least of all those things which I
+have just said pertain to the nature of body?  I pause to
+consider, I revolve all these things in my mind, and I find
+none of which I can say that it pertains to me.  It would be
+tedious to stop to enumerate them.  Let us pass to the
+attributes of soul and see if there is any one which is in me?
+What of nutrition or walking [the first mentioned]?  But if it
+is so that I have no body it is also true that I can neither
+walk nor take nourishment.  Another attribute is sensation.
+But one cannot feel without body, and besides I have thought I
+perceived many things during sleep that I recognised in my
+waking moments as not having been experienced at all.  What of
+thinking?  I find here that thought is an attribute that
+belongs to me; it alone cannot be separated from me.  I am, I
+exist, that is certain.  But how often?  Just when I think;
+for it might possibly be the case if I ceased entirely to
+think, that I should likewise cease altogether to exist.  I do
+not now admit anything which is not necessarily true:  to
+speak accurately I am not more than a thing which thinks, that
+is to say a mind or a soul, or an understanding, or a reason,
+which are terms whose significance was formerly unknown to me.
+I am, however, a real thing and really exist; but what thing?
+I have answered:  a thing which thinks.
+
+And what more?  I shall exercise my imagination [in order
+to see if I am not something more].  I am not a collection of
+members which we call the human body:  I am not a subtle air
+distributed through these members, I am not a wind, a fire, a
+vapour, a breath, nor anything at all which I can imagine or
+conceive; because I have assumed that all these were nothing.
+Without changing that supposition I find that I only leave
+myself certain of the fact that I am somewhat.  But perhaps it
+is true that these same things which I supposed were non-
+existent because they are unknown to me, are really not
+different from the self which I know.  I am not sure about
+this, I shall not dispute about it now; I can only give
+judgment on things that are known to me.  I know that I exist,
+and I inquire what I am, I whom I know to exist.  But it is
+very certain that the knowledge of my existence taken in its
+precise significance does not depend on things whose existence
+is not yet known to me; consequently it does not depend on
+those which I can feign in imagination.  And indeed the very
+term feign in imagination10 proves to me my error, for I
+really do this if I image myself a something, since to imagine
+is nothing else than to contemplate the figure or image of a
+corporeal thing.  But I already know for certain that I am,
+and that it may be that all these images, and, speaking
+generally, all things that relate to the nature of body are
+nothing but dreams [and chimeras].  For this reason I see
+clearly that I have as little reason to say, \"I shall
+stimulate my imagination in order to know more distinctly what
+I am,\" than if I were to say, \"I am now awake, and I perceive
+somewhat that is real and true:  but because I do not yet
+perceive it distinctly enough, I shall go to sleep of express
+purpose, so that my dreams may represent the perception with
+greatest truth and evidence.\"  And, thus, I know for certain
+that nothing of all that I can understand by means of my
+imagination belongs to this knowledge which I have of myself,
+and that it is necessary to recall the mind from this mode of
+thought with the utmost diligence in order that it may be able
+to know its own nature with perfect distinctness.
+
+But what then am I?  A thing which thinks.  What is a
+thing which thinks?  It is a thing which doubts, understands,
+[conceives], affirms, denies, wills, refuses, which also
+imagines and feels.
+
+Certainly it is no small matter if all these things
+pertain to my nature.  But why should they not so pertain?  Am
+I not that being who now doubts nearly everything, who
+nevertheless understands certain things, who affirms that one
+only is true, who denies all the others, who desires to know
+more, is averse from being deceived, who imagines many things,
+sometimes indeed despite his will, and who perceives many
+likewise, as by the intervention of the bodily organs?  Is
+there nothing in all this which is as true as it is certain
+that I exist, even though I should always sleep and though  he
+who has given me being employed all his ingenuity in deceiving
+me?  Is there likewise any one of these attributes which can
+be distinguished from my thought, or which might be said to be
+separated from myself?  For it is so evident of itself that it
+is I who doubts, who understands, and who desires, that there
+is no reason here to add anything to explain it.  And I have
+certainly the power of imagining likewise; for although it may
+happen (as I formerly supposed) that none of the things which
+I imagine are true, nevertheless this power of imagining does
+not cease to be really in use, and it forms part of my
+thought.  Finally, I am the same who feels, that is to say,
+who perceives certain things, as by the organs of sense, since
+it truth I see light, I hear noise, I feel heat.  But it will
+be said that these phenomena are false and that I am dreaming.
+Let it be so; still it is at least quite certain that it seems
+to me that I see light, that I hear noise and that I feel
+heat.  That cannot be false; properly speaking it is what is
+in me called feeling;11 and used in this precise sense that is
+no other thing than thinking.
+
+From this time I begin to know what I am with a little
+more clearness and distinction than before; but nevertheless
+it still seems to me, and I cannot prevent myself from
+thinking, that corporeal things, whose images are framed by
+thought, which are tested by the senses, are much more
+distinctly known than that obscure part of me which does not
+come under the imagination.  Although really it is very
+strange to say that I know and understand more distinctly
+these things whose existence seems to me dubious, which are
+unknown to me, and which do not belong to me, than others of
+the truth of which I am convinced, which are known to me and
+which pertain to my real nature, in a word, than myself.  But
+I see clearly how the case stands:  my mind loves to wander,
+and cannot yet suffer itself to be retained within the just
+limits of truth.  Very good, let us once more give it the
+freest rein, so that, when afterwards we seize the proper
+occasion for pulling up, it may the more easily be regulated
+and controlled.
+
+Let us begin by considering the commonest matters, those
+which we believe to be the most distinctly comprehended, to
+wit, the bodies which we touch and see; not indeed bodies in
+general, for these general ideas are usually a little more
+confused, but let us consider one body in particular.  Let us
+take, for example, this piece of wax:  it has been taken quite
+freshly from the hive, and it has not yet lost the sweetness
+of the honey which it contains; it still retains somewhat of
+the odour of the flowers from which it has been culled; its
+colour, its figure, its size are apparent; it is hard, cold,
+easily handled, and if you strike it with the finger, it will
+emit a sound.  Finally all the things which are requisite to
+cause us distinctly to recognise a body, are met with in it.
+But notice that while I speak and approach the fire what
+remained of the taste is exhaled, the smell evaporates, the
+colour alters, the figure is destroyed, the size increases, it
+becomes liquid, it heats, scarcely can one handle it, and when
+one strikes it, now sound is emitted.  Does the same wax
+remain after this change?  We must confess that it remains;
+none would judge otherwise.  What then did I know so
+distinctly in this piece of wax?  It could certainly be
+nothing of all that the senses brought to my notice, since all
+these things which fall under taste, smell, sight, touch, and
+hearing, are found to be changed, and yet the same wax
+remains.
+
+Perhaps it was what I now think, viz. that this wax was
+not that sweetness of honey, nor that agreeable scent of
+flowers, nor that particular whiteness, nor that figure, nor
+that sound, but simply a body which a little while before
+appeared tome as perceptible under these forms, and which is
+now perceptible under others.  But what, precisely, is it that
+I imagine when I form such conceptions?  Let us attentively
+consider this, and, abstracting from all that does not belong
+to the wax, let us see what remains.  Certainly nothing
+remains excepting a certain extended thing which is flexible
+and movable.  But what is the meaning of flexible and movable?
+Is it not that I imagine that this piece of wax being round is
+capable of becoming square and of passing from a square to a
+triangular figure?  No, certainly it is not that, since I
+imagine it admits of an infinitude of similar changes, and I
+nevertheless do not know how to compass the infinitude by my
+imagination, and consequently this conception which I have of
+the wax is not brought about by the faculty of imagination.
+What now is this extension?  Is it not also unknown?  For it
+becomes greater when the wax is melted, greater when it is
+boiled, and greater still when the heat increases; and I
+should not conceive [clearly] according to truth what wax is,
+if I did not think that even this piece that we are
+considering is capable of receiving more variations in
+extension than I have ever imagined.  We must then grant that
+I could not even understand through the imagination what this
+piece of wax is, and that it is my mind12 alone which
+perceives it.  I say this piece of wax in particular, for as
+to wax in general it is yet clearer.  But what is this piece
+of wax which cannot be understood excepting by the
+[understanding or] mind?  It is certainly the same that I see,
+touch, imagine, and finally it is the same which I have always
+believed it to be from the beginning.  But what must
+particularly be observed is that its perception is neither an
+act of vision, nor of touch, nor of imagination, and has never
+been such although it may have appeared formerly to be so, but
+only an intuition13 of the mind, which may be imperfect and
+confused as it was formerly, or clear and distinct as it is at
+present, according as my attention is more or less directed to
+the elements which are found in it, and of which it is
+composed.
+
+Yet in the meantime I am greatly astonished when I
+consider [the great feebleness of mind] and its proneness to
+fall [insensibly] into error; for although without giving
+expression to my thought I consider all this in my own mind,
+words often impede me and I am almost deceived by the terms of
+ordinary language.  For we say that we see the same wax, if it
+is present, and not that we simply judge that it is the same
+from its having the same colour and figure.  From this I
+should conclude that I knew the wax by means of vision and not
+simply by the intuition of the mind; unless by chance I
+remember that, when looking from a window and saying I see men
+who pass in the street, I really do not see them, but infer
+that what I see is men, just as I say that I see wax.  And yet
+what do I see from the window but hats and coats which may
+cover automatic machines?  Yet I judge these to be men.  And
+similarly solely by the faculty of judgment which rests in my
+mind, I comprehend that which I believed I saw with my eyes.
+
+A man who makes it his aim to raise his knowledge above
+the common should be ashamed to derive the occasion for
+doubting from the forms of speech invented by the vulgar; I
+prefer to pass on and consider whether I had a more evident
+and perfect conception of what the wax was when I first
+perceived it, and when I believed I knew it by means of the
+external senses or at least by the common sense14 as it is
+called, that is to say by the imaginative faculty, or whether
+my present conception is clearer now that I have most
+carefully examined what it is, and in what way it can be
+known.  It would certainly be absurd to doubt as to this.  For
+what was there in this first perception which was distinct?
+What was there which might not as well have been perceived by
+any of the animals?  But when I distinguish the wax from its
+external forms, and when, just as if I had taken from it its
+vestments, I consider it quite naked, it is certain that
+although some error may still be found in my judgment, I can
+nevertheless not perceive it thus without a human mind.
+
+But finally what shall I say of this mind, that is, of
+myself, for up to this point I do not admit in myself anything
+but mind?  What then, I who seem to perceive this piece of wax
+so distinctly, do I not know myself, not only with much more
+truth and certainty, but also with much more distinctness and
+clearness?  For if I judge that the wax is or exists from the
+fact that I see it, it certainly follows much more clearly
+that I am or that I exist myself from the fact that I see it.
+For it may be that what I see is not really wax, it may also
+be that I do not possess eyes with which to see anything; but
+it cannot be that when I see, or (for I no longer take account
+of the distinction) when I think I see, that I myself who
+think am nought.  So if I judge that the wax exists from the
+fact that I touch it, the same thing will follow, to wit, that
+I am; and if I judge that my imagination, or some other cause,
+whatever it is, persuades me that the wax exists, I shall
+still conclude the same.  And what I have here remarked of wax
+may be applied to all other things which are external to me
+[and which are met with outside of me].  And further, if the
+[notion or] perception of wax has seemed to me clearer and
+more distinct, not only after the sight or the touch, but also
+after many other causes have rendered it quite manifest to me,
+with how much more [evidence] and distinctness must it be said
+that I now know myself, since all the reasons which contribute
+to the knowledge of wax, or any other body whatever, are yet
+better proofs of the nature of my mind!  And there are so many
+other things in the mind itself which may contribute to the
+elucidation of its nature, that those which depend on body
+such as these just mentioned, hardly merit being taken into
+account.
+
+But finally here I am, having insensibly reverted to the
+point I desired, for, since it is now manifest to me that even
+bodies are not properly speaking known by the senses or by the
+faculty of imagination, but by the understanding only, and
+since they are not known from the fact that they are seen or
+touched, but only because they are understood, I see clearly
+that there is nothing which is easier for me to know than my
+mind.  But because it is difficult to rid oneself so promptly
+of an opinion to which one was accustomed for so long, it will
+be well that I should halt a little at this point, so that by
+the length of my meditation I may more deeply imprint on my
+memory this new knowledge."
+meditation_chapter3_title = "Meditation 2"
+meditation_chapter3_number = 3
+meditation_chapter3 = Chapter.create!(book: meditation_book, content: meditation_chapter3_content, title: meditation_chapter3_title, number: meditation_chapter3_number)
+meditation_book.chapters << meditation_chapter3
