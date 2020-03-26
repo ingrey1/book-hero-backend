@@ -50,13 +50,18 @@ library_record1 = LibraryRecord.create!(user: user1, book: book1)
 big_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dui augue, pretium a gravida eget, volutpat nec metus. Nulla laoreet lectus a neque molestie cursus. Fusce in purus at lorem dapibus dictum. Maecenas egestas purus eget dui fringilla aliquet. Proin ullamcorper bibendum turpis id rutrum. Nunc consequat nisl blandit dolor consequat gravida. Nunc iaculis lorem et enim gravida eleifend commodo magna aliquam. Nam suscipit sapien ut risus porta at porttitor sem eleifend. Ut congue bibendum metus, eu tristique ante vestibulum eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc enim est, accumsan cursus luctus a, scelerisque ut ligula. Morbi dignissim, nibh a eleifend pretium, sapien massa tempus ipsum, et accumsan metus eros vitae mauris.
 Praesent malesuada nunc quis justo consectetur vehicula accumsan ipsum congue. Donec dui risus, sollicitudin non vulputate sed, dapibus sit amet libero. Suspendisse convallis pretium libero ac adipiscing. Praesent molestie, libero ac venenatis porttitor, nulla magna congue massa, at lobortis nunc leo facilisis dui. Integer consequat velit et nibh congue semper porttitor elit mattis. Duis sollicitudin turpis sed felis convallis accumsan. Nam vitae tortor sit amet nulla tempor dapibus. Cras ac velit erat, non euismod risus. Vivamus imperdiet semper auctor. In hac habitasse platea dictumst. Pellentesque semper metus at erat iaculis blandit. Aenean suscipit eleifend sagittis.
 Suspendisse nec neque a sapien tempor mollis non ut enim. Ut in nisi elit. In libero ante, vestibulum ac lacinia et, volutpat nec lectus. Aenean nunc felis, rutrum non pulvinar in, tincidunt a metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi neque odio, auctor sed dictum hendrerit, consequat nec orci. Quisque adipiscing lacus et lectus blandit quis malesuada erat egestas. Phasellus pellentesque dolor sed est porta viverra. Maecenas consequat enim in orci ornare pretium.
+
 Nulla pharetra eros non felis vehicula egestas hendrerit in orci. Nullam luctus, elit eu porta bibendum, mauris erat sodales ligula, vitae auctor tortor ante cursus diam. Cras pharetra metus et eros suscipit accumsan. Fusce at magna neque. Phasellus tincidunt ultricies nisl et scelerisque. Donec volutpat, est non aliquet faucibus, lorem urna semper ipsum, at accumsan ligula nisi vitae quam. Phasellus iaculis vestibulum felis at fringilla. Nam egestas vulputate malesuada. Donec accumsan, diam at tincidunt elementum, neque orci ultrices massa, quis mattis neque nisi eu massa. Ut libero mi, dapibus eget varius a, porttitor eget dolor.
 Morbi sodales, est euismod vulputate ultricies, sapien urna volutpat nisi, a dapibus sem odio eget orci. Donec adipiscing tincidunt orci, a hendrerit massa ultrices et. Morbi erat erat, dapibus eleifend fringilla sed, tincidunt vel eros. Suspendisse sit amet magna magna, quis porta augue. Duis gravida justo ac sapien ullamcorper cursus. Fusce nisl libero, pharetra quis sagittis eu, faucibus vel enim. Cras quam tortor, ultrices a vehicula in, aliquet in diam. Aliquam in consequat sapien. Donec in cursus est.
+
 Fusce eros eros, sagittis blandit consectetur vel, gravida sit amet orci. Aenean eu leo tellus. Fusce tempor arcu ac nisl semper dapibus ac at augue. Nulla vestibulum dui eu ligula consectetur interdum. Phasellus non leo non nisl euismod aliquam at sit amet turpis. Fusce varius ligula at arcu tincidunt venenatis consectetur arcu tempus. Praesent dignissim pretium pulvinar. Duis ac eros augue. Duis massa odio, malesuada vel molestie sit amet, venenatis vestibulum nunc. In eget sodales risus. Vestibulum at fermentum dui. Mauris rhoncus quam sit amet lectus consequat id posuere enim blandit. Integer gravida quam eu ipsum sagittis a adipiscing odio feugiat.
 Quisque lectus sem, aliquet vitae suscipit at, tempus quis sem. Nunc arcu nunc, aliquet nec consectetur et, elementum vitae erat. Nulla mattis fringilla hendrerit. Pellentesque ac ligula quis libero condimentum scelerisque et a mi. Proin elit lectus, fermentum sit amet volutpat in, venenatis at sapien. Nullam non ipsum auctor sem gravida viverra vitae ut eros. Aenean hendrerit metus in ligula facilisis semper. Aenean scelerisque malesuada adipiscing. Suspendisse orci diam, mollis quis aliquet et, ullamcorper ac elit. Cras egestas turpis nec neque suscipit quis congue leo lacinia. Aenean mollis dictum interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Aliquam varius nulla vel urna laoreet a vulputate elit malesuada. Vivamus sed dolor lorem.
-Mauris a luctus erat. Proin porta ipsum vitae neque rutrum eget bibendum lacus pretium. Cras blandit, risus non hendrerit lobortis, sapien ipsum accumsan massa, ut vulputate nunc lorem quis nulla. Duis in enim at nunc interdum volutpat. Praesent sed velit leo. Quisque faucibus, nisi at lacinia scelerisque, odio mi auctor quam, eget ultricies sapien sem ac velit. Nulla vel est vel justo fermentum egestas in sit amet orci. Aliquam aliquet aliquam risus. Quisque vel arcu nisl, eget mollis arcu. Phasellus et nunc erat. Curabitur ut erat lacus, a dignissim ipsum. Donec sit amet lacus mauris, id tempus dolor. Sed venenatis dolor eget turpis faucibus eleifend. Nulla non sapien ligula, at vehicula arcu. Nam quam libero, aliquet nec venenatis id, sollicitudin id risus. Etiam eleifend convallis scelerisque.
+Mauris a luctus erat. 
+
+Proin porta ipsum vitae neque rutrum eget bibendum lacus pretium. Cras blandit, risus non hendrerit lobortis, sapien ipsum accumsan massa, ut vulputate nunc lorem quis nulla. Duis in enim at nunc interdum volutpat. Praesent sed velit leo. Quisque faucibus, nisi at lacinia scelerisque, odio mi auctor quam, eget ultricies sapien sem ac velit. Nulla vel est vel justo fermentum egestas in sit amet orci. Aliquam aliquet aliquam risus. Quisque vel arcu nisl, eget mollis arcu. Phasellus et nunc erat. Curabitur ut erat lacus, a dignissim ipsum. Donec sit amet lacus mauris, id tempus dolor. Sed venenatis dolor eget turpis faucibus eleifend. Nulla non sapien ligula, at vehicula arcu. Nam quam libero, aliquet nec venenatis id, sollicitudin id risus. Etiam eleifend convallis scelerisque.
 Donec aliquam nibh quis neque tempus feugiat. Nulla aliquam eros sed lacus mattis adipiscing. Maecenas convallis sollicitudin tellus, eget blandit velit consectetur sed. Morbi id augue orci, nec facilisis mi. Maecenas ut massa in arcu ultricies sagittis. Etiam commodo urna nisl. Phasellus rutrum tincidunt nibh, ultrices hendrerit ligula scelerisque nec.
 Nullam aliquet malesuada turpis, vitae elementum quam ullamcorper mattis. Phasellus dictum eleifend pretium. Quisque nunc risus, ullamcorper sed iaculis sit amet, scelerisque ut ligula. Praesent et quam felis. Sed ac tincidunt purus. Proin eu nunc purus, eget eleifend est. Ut pulvinar tellus ut nunc molestie adipiscing. Mauris ultricies consectetur velit vel tristique.
+
 Proin hendrerit dolor sed nunc convallis non sagittis enim consectetur. Praesent sollicitudin libero in arcu tempus viverra. Cras et sem mi. Sed et neque quis neque rutrum ullamcorper elementum id nisi. Nulla facilisi. Cras nibh enim, porta et fermentum non, hendrerit id leo. Pellentesque commodo diam vestibulum purus luctus eget tristique tortor porttitor. Sed dictum mattis risus et fringilla. Proin risus nisi, bibendum at mattis quis, vehicula in magna. Ut id ligula risus. Integer elementum varius ipsum, sit amet blandit odio imperdiet in. Mauris nunc tellus, pretium vitae aliquet porta, egestas in tellus. Sed semper arcu ut ante congue nec sodales nibh suscipit.
 Integer mi augue, tincidunt non porta at, laoreet id ante. Nunc adipiscing blandit vehicula. Quisque accumsan, elit non consectetur gravida, metus ligula porta arcu, vitae porttitor enim diam at ipsum. Vestibulum scelerisque ante ac dui mattis iaculis ornare justo pulvinar. Nullam tincidunt felis ac enim molestie mattis fringilla lacus accumsan. Ut id leo sit amet ipsum ultricies fringilla vel nec eros. Aenean faucibus ipsum sed felis egestas nec auctor purus volutpat. Curabitur diam sem, accumsan quis malesuada sit amet, scelerisque eu metus.
 "
@@ -120,7 +125,7 @@ inquiry_description = "An Enquiry Concerning Human Understanding is a book by th
 inquiry_categories = "philosophy; empiricism; metaphysics; epistemology; philosophy of mind"
 inquiry_title = "An Enquiry Concerning Human Understanding"
 inquiry_image_url = "https://images-na.ssl-images-amazon.com/images/I/41AnVNgxdiL._SX331_BO1,204,203,200_.jpg"
-inquiry_book = Book.create!(description: inquiry_description, author: david_hume, title: inquiry_title, categories: inquiry_categories, image_url: inquiry_image_url)
+inquiry_book = Book.create!(chapter_count: 3,description: inquiry_description, author: david_hume, title: inquiry_title, categories: inquiry_categories, image_url: inquiry_image_url)
 # add library record
 inquiry_lib_record = LibraryRecord.create!(user: user1, book: inquiry_book)
 # add chapters to book
@@ -744,7 +749,7 @@ religion_description = "Published after his death to avoid persecution, Hume's b
 religion_categories = "philosophy; philosophy of religion; metaphysics; epistemology"
 religion_title = "Dialogues Concerning Natural Religion"
 religion_image_url = "https://images-na.ssl-images-amazon.com/images/I/41tejhEC5jL._SX302_BO1,204,203,200_.jpg"
-religion_book = Book.create!(description: religion_description, author: david_hume, title: religion_title, categories: religion_categories, image_url: religion_image_url)
+religion_book = Book.create!(chapter_count: 3, description: religion_description, author: david_hume, title: religion_title, categories: religion_categories, image_url: religion_image_url)
 # add library record
 religion_lib_record = LibraryRecord.create!(user: user1, book: religion_book)
 
@@ -889,7 +894,7 @@ immortality_description = "Perry's excellent dialogue makes a complicated topic 
 immortality_categories = "philosophy; personal identity; metaphysics"
 immortality_title = "A Dialogue On Personal Identity And Immortality"
 immortality_image_url = "https://images-na.ssl-images-amazon.com/images/I/31zQOjkg3SL._SX314_BO1,204,203,200_.jpg"
-immortality_book = Book.create!(description: immortality_description, author: john_perry, title: immortality_title, categories: immortality_categories, image_url: immortality_image_url)
+immortality_book = Book.create!(chapter_count: 1, description: immortality_description, author: john_perry, title: immortality_title, categories: immortality_categories, image_url: immortality_image_url)
 # add library record
 immortality_lib_record = LibraryRecord.create!(user: user1, book: immortality_book)
 # add chapters to book
@@ -1323,7 +1328,7 @@ meditation_description = "Descartes's Meditations on First Philosophy remains on
 meditation_categories = "philosophy; metaphysics; epistemology; philosophy of mind; philosophy of religion"
 meditation_title = "Descartes' Meditations on First Philosophy"
 meditation_image_url = "https://images-na.ssl-images-amazon.com/images/I/41SJQ20dmgL._SX329_BO1,204,203,200_.jpg"
-meditation_book = Book.create!(description: meditation_description, author: rene_descartes, title: meditation_title, categories: meditation_categories, image_url: meditation_image_url)
+meditation_book = Book.create!(chapter_count: 3, description: meditation_description, author: rene_descartes, title: meditation_title, categories: meditation_categories, image_url: meditation_image_url)
 # add library record
 meditation_lib_record = LibraryRecord.create!(user: user1, book: meditation_book)
 # add chapters to book
@@ -2149,7 +2154,7 @@ philosophy is a young subject, with a promising but unpredictable future."
 persons_categories = "philosophy; ethics; normativity; metaphysics; rationality"
 persons_title = "Reasons And Persons"
 persons_image_url = "https://images-na.ssl-images-amazon.com/images/I/41jZ2-2m%2B%2BL._SX328_BO1,204,203,200_.jpg"
-persons_book = Book.create!(description: persons_description, author: derek_parfit, title: persons_title, categories: persons_categories, image_url: persons_image_url)
+persons_book = Book.create!(chapter_count: 1, description: persons_description, author: derek_parfit, title: persons_title, categories: persons_categories, image_url: persons_image_url)
 # add library record
 persons_lib_record = LibraryRecord.create!(user: user1, book: persons_book)
 # add chapters to book
@@ -2190,7 +2195,7 @@ S"
 realistic_categories = "philosophy; rationality; normativity; meta-ethics"
 realistic_title = "Being Realistic About Reasons"
 realistic_image_url = "https://images-na.ssl-images-amazon.com/images/I/41loLaV6p3L._SX316_BO1,204,203,200_.jpg"
-realistic_book = Book.create!(description: realistic_description, author: scanlon, title: realistic_title, categories: realistic_categories, image_url: realistic_image_url)
+realistic_book = Book.create!(chapter_count: 1, description: realistic_description, author: scanlon, title: realistic_title, categories: realistic_categories, image_url: realistic_image_url)
 # add library record
 realistic_lib_record = LibraryRecord.create!(user: user1, book: realistic_book)
 # add chapters to book
@@ -2231,7 +2236,7 @@ A moral wake-up call from one of the most influential and controversial ethicist
 liberation_categories = "philosophy; ethics; animal rights"
 liberation_title = "Animal Liberation"
 liberation_image_url = "https://images-na.ssl-images-amazon.com/images/I/51e1UpeQEDL._SX326_BO1,204,203,200_.jpg"
-liberation_book = Book.create!(description: liberation_description, author: peter_singer, title: liberation_title, categories: liberation_categories, image_url: liberation_image_url)
+liberation_book = Book.create!(chapter_count: 1, description: liberation_description, author: peter_singer, title: liberation_title, categories: liberation_categories, image_url: liberation_image_url)
 # add library record
 liberation_lib_record = LibraryRecord.create!(user: user1, book: liberation_book)
 # add chapters to book
@@ -2266,7 +2271,7 @@ zoo_description = "An Enquiry Concerning Human Understanding is a book by the Sc
 zoo_categories = "philosophy; ethics; animal rights"
 zoo_title = "Zoopolis: A Political Theory Of Animal Rights"
 zoo_image_url = "https://images-na.ssl-images-amazon.com/images/I/51gX8Z2Qe8L._SX332_BO1,204,203,200_.jpg"
-zoo_book = Book.create!(description: zoo_description, author: sue_donaldson, title: zoo_title, categories: zoo_categories, image_url: zoo_image_url)
+zoo_book = Book.create!(chapter_count: 1, description: zoo_description, author: sue_donaldson, title: zoo_title, categories: zoo_categories, image_url: zoo_image_url)
 # add library record
 zoo_lib_record = LibraryRecord.create!(user: user1, book: zoo_book)
 # add chapters to book
@@ -2304,7 +2309,7 @@ serious_description = "An Enquiry Concerning Human Understanding is a book by th
 serious_categories = "philosophy; meta-ethics; normativity"
 serious_title = "Taking Morality Seriously: A Defense of Robust Realism"
 serious_image_url = "https://images-na.ssl-images-amazon.com/images/I/41YTzqpehBL._SX313_BO1,204,203,200_.jpg"
-serious_book = Book.create!(description: serious_description, author: david_enoch, title: serious_title, categories: serious_categories, image_url: serious_image_url)
+serious_book = Book.create!(chapter_count: 1, description: serious_description, author: david_enoch, title: serious_title, categories: serious_categories, image_url: serious_image_url)
 # add library record
 serious_lib_record = LibraryRecord.create!(user: user1, book: serious_book)
 # add chapters to book
@@ -2337,7 +2342,7 @@ myth_description = "In The Myth of Morality, Richard Joyce argues that moral dis
 myth_categories = "philosophy; ethics; meta-ethics"
 myth_title = "The Myth of Morality"
 myth_image_url = "https://images-na.ssl-images-amazon.com/images/I/41yl5RxPjlL._SX334_BO1,204,203,200_.jpg"
-myth_book = Book.create!(description: myth_description, author: richard_joyce, title: myth_title, categories: myth_categories, image_url: myth_image_url)
+myth_book = Book.create!(chapter_count: 1, description: myth_description, author: richard_joyce, title: myth_title, categories: myth_categories, image_url: myth_image_url)
 # add library record
 myth_lib_record = LibraryRecord.create!(user: user1, book: myth_book)
 # add chapters to book
