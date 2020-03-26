@@ -14,6 +14,10 @@ class Api::V1::ChaptersController < ApplicationController
 
   end 
 
+  def previous_chapter
+     handle_auth { render_previous_chapter }
+  end 
+
   def next_chapter
 
     handle_auth { render_next_chapter }
@@ -27,6 +31,18 @@ class Api::V1::ChaptersController < ApplicationController
   end 
 
   private
+  
+  def render_previous_chapter
+    current_chapter_num = get_current_chapter().number
+    book = Book.find(params[:book_id])
+    user = User.find(params[:user_id])
+    previous_chapter = Chapter.find_by(book: book, number: current_chapter_num - 1)
+    if previous_chapter
+      render json: previous_chapter, user: user
+    else 
+      render json: {complete: 'first chapter'}
+    end 
+  end
 
   def render_next_chapter
     current_chapter_num = get_current_chapter().number
@@ -65,7 +81,7 @@ class Api::V1::ChaptersController < ApplicationController
   end 
 
   def render_update_reading_status
-
+    
     book = Book.find(params[:book_id])
     user = User.find(params[:user_id])
     library_record = LibraryRecord.find_by(book: book, user: user)
@@ -73,7 +89,7 @@ class Api::V1::ChaptersController < ApplicationController
     new_current_chapter = params[:current_chapter].to_i
     new_current_word = params[:current_word].to_i
     #byebug
-    if library_record.update(current_chapter: new_current_chapter, current_word: new_current_word)
+    if library_record.update!(current_chapter: new_current_chapter, current_word: new_current_word)
        render json: {success: 'reading location saved'}
     else
        render json: {errors: ['unable to save reading location']} 

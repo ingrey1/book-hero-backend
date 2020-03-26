@@ -8,6 +8,7 @@ Rails.application.routes.draw do
          get '/:user_id/profile', to: "accounts#show" # profile info 
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
           get '/chapters/next_chapter', to: 'chapters#next_chapter'
+          get '/chapters/previous_chapter', to: 'chapters#previous_chapter'
           get '/chapters/current_chapter', to: 'chapters#current_chapter'
           post '/chapters/update_reading_status', to: 'chapters#update_reading_status'  
           resources :chapters do # user's book's chapters
