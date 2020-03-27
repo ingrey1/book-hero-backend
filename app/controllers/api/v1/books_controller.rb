@@ -2,7 +2,7 @@ class Api::V1::BooksController < ApplicationController
     
     def all_books
      
-     handle_auth { render_all_books }
+     render_all_books
 
     end 
     
@@ -31,7 +31,9 @@ class Api::V1::BooksController < ApplicationController
     private
 
     def render_all_books
-      render json: Book.all
+      # render books not in users library
+      books = Book.joins(:library_records).where.not("user_id = #{params[:user_id]}")
+      render json: books
     end
     
     def render_my_books

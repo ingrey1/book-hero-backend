@@ -36,7 +36,7 @@ book1 = Book.create!(image_url: "https://d827xgdhgqbnd.cloudfront.net/wp-content
 # book9 = Book.create!(image_url: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png", categories: "classics;fantasy", title: "elderyberry", description: description, author: author1)
 # book10 = Book.create!(image_url: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png", categories: "classics;romance", title: "succulent king", description: description, author: author1)
 
-library_record1 = LibraryRecord.create!(user: user1, book: book1)
+library_record1 = LibraryRecord.create!(user: user2, book: book1)
 # library_record2 = LibraryRecord.create!(user: user1, book: book2)
 # library_record3 = LibraryRecord.create!(user: user1, book: book3)
 # library_record4 = LibraryRecord.create!(user: user1, book: book4)
