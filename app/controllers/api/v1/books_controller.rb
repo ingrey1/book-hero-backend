@@ -2,8 +2,12 @@ class Api::V1::BooksController < ApplicationController
     
     def all_books
      
-     render_all_books
+     handle_auth { render_all_books }
 
+    end 
+
+    def add_book
+        handle_auth { render_add_book }
     end 
     
     def index
@@ -39,6 +43,21 @@ class Api::V1::BooksController < ApplicationController
     def render_my_books
        user = User.find(params[:user_id])
         render json: user.books, each_serializer: UserBookSerializer, user: user
+    end 
+
+    def render_add_book
+
+      user = User.find(params[:user_id])
+      book = Book.find(params[:book_id])
+      record = LibraryRecord.new(user: user, book: book)
+      if record.save
+        render json: book
+      else
+        
+        render json: {errors: ['couldnt create library record']}
+
+      end 
+       
     end 
 
    

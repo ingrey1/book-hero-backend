@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :users do
          get '/all_books', to: 'books#all_books' # all books
          get '/profile', to: "accounts#show" # profile info 
+         post '/add_book/:book_id', to: "books#add_book"
          resources :books, only: [:index, :show, :create, :destroy] do # user's own collection 
           get '/chapters/next_chapter', to: 'chapters#next_chapter'
           get '/chapters/previous_chapter', to: 'chapters#previous_chapter'
