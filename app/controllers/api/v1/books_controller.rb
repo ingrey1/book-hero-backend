@@ -1,11 +1,5 @@
 class Api::V1::BooksController < ApplicationController
     
-    # def all_books
-     
-    #  handle_auth { render_all_books }
-
-    # end 
-
     def add_book
         handle_auth { render_add_book }
     end 
@@ -63,7 +57,4 @@ class Api::V1::BooksController < ApplicationController
       end 
        
     end 
-
-   
-
 end
