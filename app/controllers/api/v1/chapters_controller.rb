@@ -6,6 +6,17 @@ class Api::V1::ChaptersController < ApplicationController
 
   def show
 
+    chapter_d = params[:chapter_designation]
+    if chapter_d == "current":
+      handle_auth { render_current_chapter }
+    elsif chapter_d == "next":
+      handle_auth { render_next_chapter }
+    elsif chapter_d == "previous":
+      handle_auth { render_previous_chapter }
+    else 
+      handle_auth { render_chapter }
+
+
   end 
   
   def current_chapter 
@@ -31,6 +42,10 @@ class Api::V1::ChaptersController < ApplicationController
   end 
 
   private
+
+  def render_current_chapter
+     
+  end 
   
   def render_previous_chapter
     current_chapter_num = get_current_chapter().number
