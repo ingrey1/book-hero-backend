@@ -7,34 +7,18 @@ class Api::V1::ChaptersController < ApplicationController
   def show
 
     chapter_d = params[:chapter_designation]
-    if chapter_d == "current":
+    if chapter_d == "current"
       handle_auth { render_current_chapter }
-    elsif chapter_d == "next":
+    elsif chapter_d == "next"
       handle_auth { render_next_chapter }
-    elsif chapter_d == "previous":
+    elsif chapter_d == "previous"
       handle_auth { render_previous_chapter }
     else 
       handle_auth { render_chapter }
-
+    end 
 
   end 
   
-  def current_chapter 
-   
-   handle_auth { render_current_chapter }
-
-  end 
-
-  def previous_chapter
-     handle_auth { render_previous_chapter }
-  end 
-
-  def next_chapter
-
-    handle_auth { render_next_chapter }
-
-  end
-
   def update_reading_status
 
       handle_auth { render_update_reading_status }
@@ -44,6 +28,13 @@ class Api::V1::ChaptersController < ApplicationController
   private
 
   def render_current_chapter
+
+    chapter = Chapter.find(params[:id])
+    if chapter
+      render json: chapter, user: user
+    else
+      render json: {errors: ["chapter not found"]}, status: 404
+    end  
      
   end 
   
@@ -67,7 +58,7 @@ class Api::V1::ChaptersController < ApplicationController
     if next_chapter
       render json: next_chapter, user: user
     else 
-      render json: {complete: 'last chapter'}
+      render json: {complete: 'last chapter'}, status: 404
     end 
   end
 
@@ -90,7 +81,7 @@ class Api::V1::ChaptersController < ApplicationController
      render json: current_chapter, user: user
 
     else 
-      render json: {errors: ['chapter not found']}
+      render json: {errors: ['chapter not found']}, status: 404
     end 
 
   end 
@@ -105,9 +96,9 @@ class Api::V1::ChaptersController < ApplicationController
     new_current_word = params[:current_word].to_i
     #byebug
     if library_record.update!(current_chapter: new_current_chapter, current_word: new_current_word)
-       render json: {success: 'reading location saved'}
+       render json: {success: 'reading location saved'}, status: 200
     else
-       render json: {errors: ['unable to save reading location']} 
+       render json: {errors: ['unable to save reading location']}, status: 500 
     end 
     
 
