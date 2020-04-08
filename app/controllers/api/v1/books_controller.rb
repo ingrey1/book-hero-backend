@@ -1,18 +1,21 @@
 class Api::V1::BooksController < ApplicationController
     
-    def all_books
+    # def all_books
      
-     handle_auth { render_all_books }
+    #  handle_auth { render_all_books }
 
-    end 
+    # end 
 
     def add_book
         handle_auth { render_add_book }
     end 
     
     def index
-
-      handle_auth { render_my_books }
+      if params[:my_library] == "true"
+        handle_auth { render_my_books }
+      else 
+        handle_auth { render_all_books }
+      end 
 
     end 
 
