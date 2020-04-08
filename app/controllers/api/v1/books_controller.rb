@@ -36,7 +36,8 @@ class Api::V1::BooksController < ApplicationController
 
     def render_all_books
       # render books not in users library
-      books = Book.joins(:library_records).where.not("user_id = #{params[:user_id]}")
+      books = Book.where.not(id: Book.joins(:library_records).where("user_id = #{params[:user_id]}").pluck(:id))
+      #byebug
       render json: books
     end
     
